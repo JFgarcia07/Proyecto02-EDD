@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMarket EDD</title>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+<!-- Topbar -->
+<div id="topbar">
+    <h5 class="topbar-title">Dashboard</h5>
+    <div class="topbar-actions">
+        <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
+        <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
+    </div>
+</div>
+
+<!-- Contenido -->
+<div id="main-content">
+
+    <!-- Stats -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="stat-card d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="stat-label">Productos totales</div>
+                    <div class="stat-value" id="stat-products">0</div>
+                    <div class="stat-sub">en todas las sucursales</div>
+                </div>
+                <div class="stat-icon" style="background:#eff6ff">📦</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="stat-label">Sucursales</div>
+                    <div class="stat-value" id="stat-branches">0</div>
+                    <div class="stat-sub">conectadas en red</div>
+                </div>
+                <div class="stat-icon" style="background:#f0fdf4">🏪</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="stat-label">En tránsito</div>
+                    <div class="stat-value" id="stat-transit">0</div>
+                    <div class="stat-sub">productos moviéndose</div>
+                </div>
+                <div class="stat-icon" style="background:#fffbeb">🚚</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="stat-label">Transferencias</div>
+                    <div class="stat-value" id="stat-transfers">0</div>
+                    <div class="stat-sub">realizadas hoy</div>
+                </div>
+                <div class="stat-icon" style="background:#fdf4ff">🔄</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actividad reciente -->
+    <div class="content-card">
+        <div class="card-header-title">Actividad reciente</div>
+        <table class="table custom-table mb-0">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Criterio</th>
+                    <th>Estado</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody id="activity-log">
+                <tr>
+                    <td colspan="6" class="text-center text-muted py-4">Sin actividad aún</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../src/SidebarLoader.js"></script>
+
+</body>
+</html>

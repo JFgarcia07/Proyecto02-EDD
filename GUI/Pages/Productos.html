@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos — SuperMarket EDD</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+<!-- Topbar -->
+<div id="topbar">
+    <h5 class="topbar-title">Gestión de Productos</h5>
+    <div class="topbar-actions">
+        <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
+        <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
+    </div>
+</div>
+
+<div id="main-content">
+
+    <!-- ── Formulario agregar producto ── -->
+    <div class="content-card">
+        <div class="card-header-title">Agregar producto</div>
+
+        <div class="row g-2 mb-2">
+            <div class="col-md-3">
+                <label class="form-label-sm">Nombre</label>
+                <input type="text" class="form-control form-control-sm"
+                    id="p-name" placeholder="Nombre del producto">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-sm">Código de barra</label>
+                <input type="text" class="form-control form-control-sm"
+                    id="p-barcode" placeholder="0000000000000">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-sm">Categoría</label>
+                <input type="text" class="form-control form-control-sm"
+                    id="p-category" placeholder="Ej: Lácteos">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-sm">Marca</label>
+                <input type="text" class="form-control form-control-sm"
+                    id="p-brand" placeholder="Marca">
+            </div>
+            <div class="col-md-1">
+                <label class="form-label-sm">Precio (Q)</label>
+                <input type="number" class="form-control form-control-sm"
+                    id="p-price" placeholder="0.00" min="0" step="0.01">
+            </div>
+            <div class="col-md-1">
+                <label class="form-label-sm">Stock</label>
+                <input type="number" class="form-control form-control-sm"
+                    id="p-stock" placeholder="0" min="0">
+            </div>
+        </div>
+
+        <div class="row g-2 align-items-end">
+            <div class="col-md-2">
+                <label class="form-label-sm">Fecha caducidad</label>
+                <input type="date" class="form-control form-control-sm" id="p-expiry">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label-sm">Sucursal</label>
+                <select class="form-select form-select-sm" id="p-branch">
+                    <option value="">Seleccionar sucursal...</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-sm btn-danger w-100" onclick="addProduct()">
+                    + Agregar producto
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-sm btn-outline-secondary w-100" onclick="undoProduct()">
+                    ↩ Deshacer (rollback)
+                </button>
+            </div>
+            <div class="col-md-3">
+                <div id="product-msg" style="font-size:12px"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Filtros y búsqueda rápida ── -->
+    <div class="content-card">
+        <div class="card-header-title">Inventario global</div>
+
+        <div class="row g-2 align-items-center mb-3">
+            <div class="col-md-3">
+                <input type="text" class="form-control form-control-sm"
+                    id="filter-search" placeholder="🔍 Filtrar por nombre o código..."
+                    oninput="filterProducts()">
+            </div>
+            <div class="col-md-2">
+                <select class="form-select form-select-sm" id="filter-category" onchange="filterProducts()">
+                    <option value="">Todas las categorías</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select form-select-sm" id="filter-branch" onchange="filterProducts()">
+                    <option value="">Todas las sucursales</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select form-select-sm" id="filter-status" onchange="filterProducts()">
+                    <option value="">Todos los estados</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="En tránsito">En tránsito</option>
+                    <option value="Agotado">Agotado</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select form-select-sm" id="sort-by" onchange="filterProducts()">
+                    <option value="name">Ordenar por nombre</option>
+                    <option value="price">Ordenar por precio</option>
+                    <option value="expiry">Ordenar por caducidad</option>
+                    <option value="stock">Ordenar por stock</option>
+                </select>
+            </div>
+            <div class="col-md-1 text-end">
+                <span class="badge bg-secondary" id="product-count">0</span>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table custom-table mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Código</th>
+                        <th>Categoría</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Caducidad</th>
+                        <th>Sucursal</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <tr>
+                        <td colspan="11" class="text-center text-muted py-4">
+                            Sin productos registrados
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div><!-- fin main-content -->
+
+
+<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../src/SidebarLoader.js"></script>
+<!-- Nodos -->
+<script src="../src/Estructuras/Nodo.js"></script>
+<script src="../src/Arboles/AVLNodo.js"></script>
+<script src="../src/Arboles/BNodo.js"></script>
+<script src="../src/Arboles/BMasNodo.js"></script>
+<script src="../src/TablaHash/NodoHash.js"></script>
+<!-- Estructuras -->
+<script src="../src/Estructuras/Productos.js"></script>
+<script src="../src/Estructuras/ListaProductos.js"></script>
+<script src="../src/Estructuras/ListaProductosOrdenada.js"></script>
+<script src="../src/Arboles/ArbolAVL.js"></script>
+<script src="../src/Arboles/ArbolB.js"></script>
+<script src="../src/Arboles/ArbolBMas.js"></script>
+<script src="../src/TablaHash/TablaHash.js"></script>
+<!-- Lógica -->
+<script src="../src/Logica/LectorCSV.js"></script>
+<script src="../src/Logica/Catalogo.js"></script>
+<script src="../src/main.js"></script>
+
+</body>
+</html>
