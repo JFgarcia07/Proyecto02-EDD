@@ -1,31 +1,132 @@
-const catalogo = new Catalogo();
+const catalogo = typeof Catalogo !== 'undefined' ? new Catalogo() : null;
 
-const SUCURSALES = [
-    { id: 'S01', nombre: 'Sucursal Central' },
-    { id: 'S02', nombre: 'Sucursal Norte' },
-    { id: 'S03', nombre: 'Sucursal Sur' },
-    { id: 'S04', nombre: 'Sucursal Este' },
-    { id: 'S05', nombre: 'Sucursal Oeste' },
-];
+// ── Sucursales (localStorage) ───────────────────────────────────────────────
+
+function getSucursalesGuardadas() {
+    try { return JSON.parse(localStorage.getItem('sucursales') || '[]'); }
+    catch { return []; }
+}
+
+function guardarSucursales(lista) {
+    localStorage.setItem('sucursales', JSON.stringify(lista));
+}
+
+// ── Productos (localStorage) ────────────────────────────────────────────────
+
+function guardarProductos() {
+    if (!catalogo) return;
+    localStorage.setItem('productos', JSON.stringify(catalogo.listarTodos()));
+}
+
+function cargarProductos() {
+    if (!catalogo) return;
+    const datos = JSON.parse(localStorage.getItem('productos') || '[]');
+    datos.forEach(d => {
+        const p = new Producto(d.nombre, d.codigoBarras, d.categoria, d.fechaExpiracion, d.marca, d.precio, d.stock);
+        p.sucursalId = d.sucursalId;
+        p.estado = d.estado;
+        catalogo.agregarProducto(p);
+    });
+}
 
 function inicializarSucursales() {
     const selectForm   = document.getElementById('p-branch');
     const selectFilter = document.getElementById('filter-branch');
-    if (!selectForm) return;
+    const sucursales   = getSucursalesGuardadas();
 
-    SUCURSALES.forEach(s => {
-        const optForm = new Option(s.nombre, s.id);
-        const optFilter = new Option(s.nombre, s.id);
-        selectForm.appendChild(optForm);
-        selectFilter.appendChild(optFilter);
-    });
+    if (selectForm) {
+        selectForm.innerHTML = '<option value="">Seleccionar sucursal...</option>';
+        sucursales.forEach(s => selectForm.appendChild(new Option(s.nombre, s.id)));
+    }
+    if (selectFilter) {
+        selectFilter.innerHTML = '<option value="">Todas las sucursales</option>';
+        sucursales.forEach(s => selectFilter.appendChild(new Option(s.nombre, s.id)));
+    }
 }
+
+function addBranch() {
+    const id        = document.getElementById('b-id')?.value.trim();
+    const nombre    = document.getElementById('b-name')?.value.trim();
+    const ubicacion = document.getElementById('b-location')?.value.trim();
+    const ti        = document.getElementById('p-entry')?.value.trim();
+    const tp        = document.getElementById('p-transfer')?.value.trim();
+    const td        = document.getElementById('b-dispatch')?.value.trim();
+
+    if (!id || !nombre || !ubicacion || !ti || !tp || !td) {
+        mostrarMensajeBranch('Todos los campos son obligatorios.', 'danger');
+        return;
+    }
+
+    const lista = getSucursalesGuardadas();
+    if (lista.some(s => s.id === id)) {
+        mostrarMensajeBranch(`Ya existe una sucursal con ID "${id}".`, 'danger');
+        return;
+    }
+
+    lista.push({
+        id, nombre, ubicacion,
+        tiempoIngreso:     parseInt(ti),
+        tiempoPreparacion: parseInt(tp),
+        intervaloDespacho: parseInt(td)
+    });
+    guardarSucursales(lista);
+    mostrarMensajeBranch(`Sucursal "${nombre}" agregada correctamente.`);
+    renderBranchTable();
+
+    ['b-id','b-name','b-location','p-entry','p-transfer','b-dispatch']
+        .forEach(fid => { const el = document.getElementById(fid); if (el) el.value = ''; });
+}
+
+function eliminarSucursal(id) {
+    guardarSucursales(getSucursalesGuardadas().filter(s => s.id !== id));
+    renderBranchTable();
+    mostrarMensajeBranch('Sucursal eliminada.');
+}
+
+function renderBranchTable() {
+    const tbody = document.getElementById('branch-list');
+    const count = document.getElementById('branch-count');
+    if (!tbody) return;
+
+    const lista = getSucursalesGuardadas();
+    if (count) count.textContent = lista.length;
+
+    if (lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="11" class="text-center text-muted py-4">Sin sucursales registradas</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = lista.map(s => `<tr>
+        <td><code>${s.id}</code></td>
+        <td>${s.nombre}</td>
+        <td>${s.ubicacion}</td>
+        <td>${s.tiempoIngreso}</td>
+        <td>${s.tiempoPreparacion}</td>
+        <td>${s.intervaloDespacho}</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td><button class="btn btn-sm btn-outline-danger py-0"
+            onclick="eliminarSucursal('${s.id}')">Eliminar</button></td>
+    </tr>`).join('');
+}
+
+function mostrarMensajeBranch(texto, tipo = 'success') {
+    const el = document.getElementById('branch-msg');
+    if (!el) return;
+    el.innerHTML = `<span class="text-${tipo}">${texto}</span>`;
+    setTimeout(() => { el.innerHTML = ''; }, 3000);
+}
+
+// ── Productos ───────────────────────────────────────────────────────────────
 
 function renderTabla(productos) {
     const tbody = document.getElementById('product-list');
     const count = document.getElementById('product-count');
     if (!tbody) return;
 
+    const sucursales = getSucursalesGuardadas();
     count.textContent = productos.length;
 
     if (productos.length === 0) {
@@ -34,7 +135,7 @@ function renderTabla(productos) {
     }
 
     tbody.innerHTML = productos.map((p, i) => {
-        const sucursal = SUCURSALES.find(s => s.id === p.sucursalId) || { nombre: p.sucursalId || '—' };
+        const sucursal   = sucursales.find(s => s.id === p.sucursalId) || { nombre: p.sucursalId || '—' };
         const estadoBadge = {
             'Disponible':  'bg-success',
             'En tránsito': 'bg-warning text-dark',
@@ -61,15 +162,13 @@ function renderTabla(productos) {
 }
 
 function actualizarFiltrosCategorias() {
+    if (!catalogo) return;
     const sel = document.getElementById('filter-category');
     if (!sel) return;
     const categorias = [...new Set(catalogo.listarTodos().map(p => p.categoria).filter(Boolean))].sort();
     const valorActual = sel.value;
     sel.innerHTML = '<option value="">Todas las categorías</option>';
-    categorias.forEach(c => {
-        const opt = new Option(c, c);
-        sel.appendChild(opt);
-    });
+    categorias.forEach(c => sel.appendChild(new Option(c, c)));
     sel.value = valorActual;
 }
 
@@ -105,6 +204,7 @@ function addProduct() {
     }
 
     mostrarMensaje(`"${nombre}" agregado correctamente.`);
+    guardarProductos();
     actualizarFiltrosCategorias();
     filterProducts();
 
@@ -122,6 +222,7 @@ function undoProduct() {
     }
     const accion = op.accion === 'agregar' ? 'Agregado revertido' : 'Eliminación revertida';
     mostrarMensaje(`${accion}: "${op.producto.nombre}".`);
+    guardarProductos();
     actualizarFiltrosCategorias();
     filterProducts();
 }
@@ -132,11 +233,13 @@ function eliminarProducto(codigoBarras) {
         return;
     }
     mostrarMensaje('Producto eliminado.');
+    guardarProductos();
     actualizarFiltrosCategorias();
     filterProducts();
 }
 
 function filterProducts() {
+    if (!catalogo) return;
     const texto    = (document.getElementById('filter-search')?.value || '').toLowerCase();
     const cat      = document.getElementById('filter-category')?.value || '';
     const sucursal = document.getElementById('filter-branch')?.value || '';
@@ -147,12 +250,10 @@ function filterProducts() {
         ? catalogo.listaPorNombres()
         : catalogo.listarTodos();
 
-    if (texto) {
-        lista = lista.filter(p =>
-            p.nombre.toLowerCase().includes(texto) ||
-            p.codigoBarras.toLowerCase().includes(texto)
-        );
-    }
+    if (texto) lista = lista.filter(p =>
+        p.nombre.toLowerCase().includes(texto) ||
+        p.codigoBarras.toLowerCase().includes(texto)
+    );
     if (cat)      lista = lista.filter(p => p.categoria === cat);
     if (sucursal) lista = lista.filter(p => p.sucursalId === sucursal);
     if (estado)   lista = lista.filter(p => p.estado === estado);
@@ -171,7 +272,12 @@ function actualizarReloj() {
 
 document.addEventListener('DOMContentLoaded', () => {
     inicializarSucursales();
-    filterProducts();
+    renderBranchTable();
+    if (catalogo) {
+        cargarProductos();
+        actualizarFiltrosCategorias();
+        filterProducts();
+    }
     actualizarReloj();
     setInterval(actualizarReloj, 1000);
 });

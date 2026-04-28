@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferir — SuperMarket EDD</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+<div id="topbar">
+    <h5 class="topbar-title">Transferencia de Productos</h5>
+</div>
+
+<div id="main-content">
+
+    <div class="content-card">
+        <div class="card-header-title">Nueva transferencia</div>
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <label class="form-label">Producto <span class="text-danger">*</span></label>
+                <select class="form-select form-select-sm" id="t-product">
+                    <option value="">Seleccionar producto...</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Sucursal origen <span class="text-danger">*</span></label>
+                <select class="form-select form-select-sm" id="t-origin">
+                    <option value="">Seleccionar...</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Sucursal destino <span class="text-danger">*</span></label>
+                <select class="form-select form-select-sm" id="t-dest">
+                    <option value="">Seleccionar...</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Criterio</label>
+                <select class="form-select form-select-sm" id="t-criteria">
+                    <option value="tiempo">⏱ Mínimo tiempo</option>
+                    <option value="costo">💰 Menor costo</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-danger w-100" onclick="transfer()">
+                    Calcular ruta y transferir 🚚
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-card" id="route-result" style="display:none">
+        <div class="card-header-title">Ruta calculada</div>
+        <div id="route-path" class="mb-3"></div>
+        <div id="route-detail" class="text-muted" style="font-size:13px"></div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header-title">Estado de colas por sucursal</div>
+        <div id="queues-vis">
+            <p class="text-muted" style="font-size:13px">No hay sucursales registradas</p>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header-title">Historial de transferencias</div>
+        <div class="table-responsive">
+            <table class="table custom-table mb-0">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Criterio</th>
+                        <th>Estado</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody id="activity-log">
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">Sin transferencias aún</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../src/SidebarLoader.js"></script>
+<script src="../../src/Stack.js"></script>
+<script src="../../src/Queue.js"></script>
+<script src="../../src/Product.js"></script>
+<script src="../../src/Nodo.js"></script>
+<script src="../../src/ListaProductos.js"></script>
+<script src="../../src/ListaProductosOrdenada.js"></script>
+<script src="../../src/AVLNodo.js"></script>
+<script src="../../src/ArbolAVL.js"></script>
+<script src="../../src/BNodo.js"></script>
+<script src="../../src/ArbolB.js"></script>
+<script src="../../src/BMasNodo.js"></script>
+<script src="../../src/ArbolBMas.js"></script>
+<script src="../../src/NodoHash.js"></script>
+<script src="../../src/TablaHash.js"></script>
+<script src="../../src/Catalogo.js"></script>
+<script src="../../src/Branch.js"></script>
+<script src="../../src/Arista.js"></script>
+<script src="../../src/Graph.js"></script>
+<script src="../../src/LectorCSV.js"></script>
+<script src="../../src/main.js"></script>
+
+</body>
+</html>

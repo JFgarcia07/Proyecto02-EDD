@@ -46,7 +46,6 @@ class ArbolAVL {
     }
 
     _insertarPriv(nodo, producto, resultado) {
-        // Inserción BST normal
         if (nodo === null) {
             resultado.aprobado = true;
             return new AVLNodo(producto);
@@ -57,9 +56,15 @@ class ArbolAVL {
         } else if (producto.nombre > nodo.data.nombre) {
             nodo.derecha = this._insertarPriv(nodo.derecha, producto, resultado);
         } else {
-            // Duplicado
-            resultado.aprobado = false;
-            return nodo;
+            // Mismo nombre: usar codigoBarras como desempate
+            if (producto.codigoBarras < nodo.data.codigoBarras) {
+                nodo.izquierda = this._insertarPriv(nodo.izquierda, producto, resultado);
+            } else if (producto.codigoBarras > nodo.data.codigoBarras) {
+                nodo.derecha = this._insertarPriv(nodo.derecha, producto, resultado);
+            } else {
+                resultado.aprobado = false;
+                return nodo;
+            }
         }
 
         // Actualizar altura
@@ -119,39 +124,38 @@ class ArbolAVL {
         return actual;
     }
 
-    _removerPriv(nodo, nombre, resultado) {
+    _removerPriv(nodo, nombre, codigoBarras, resultado) {
         if (nodo === null) {
             resultado.aprobado = false;
             return null;
         }
 
         if (nombre < nodo.data.nombre) {
-            nodo.izquierda = this._removerPriv(nodo.izquierda, nombre, resultado);
+            nodo.izquierda = this._removerPriv(nodo.izquierda, nombre, codigoBarras, resultado);
         } else if (nombre > nodo.data.nombre) {
-            nodo.derecha = this._removerPriv(nodo.derecha, nombre, resultado);
+            nodo.derecha = this._removerPriv(nodo.derecha, nombre, codigoBarras, resultado);
+        } else if (codigoBarras < nodo.data.codigoBarras) {
+            nodo.izquierda = this._removerPriv(nodo.izquierda, nombre, codigoBarras, resultado);
+        } else if (codigoBarras > nodo.data.codigoBarras) {
+            nodo.derecha = this._removerPriv(nodo.derecha, nombre, codigoBarras, resultado);
         } else {
             resultado.aprobado = true;
 
-            // Nodo con 0 o 1 hijo
             if (nodo.izquierda === null || nodo.derecha === null) {
                 const temporal = nodo.izquierda ? nodo.izquierda : nodo.derecha;
 
                 if (temporal === null) {
-                    // Sin hijos
                     nodo = null;
                 } else {
-                    // Copiar datos del hijo
                     nodo.data      = temporal.data;
                     nodo.izquierda = temporal.izquierda;
                     nodo.derecha   = temporal.derecha;
                     nodo.altura    = temporal.altura;
                 }
             } else {
-                // Nodo con 2 hijos: obtener sucesor in-orden
                 const sucesor = this._getNodoMinimoPriv(nodo.derecha);
                 nodo.data = sucesor.data;
-                const nombreSucesor = sucesor.data.nombre;
-                nodo.derecha = this._removerPriv(nodo.derecha, nombreSucesor, resultado);
+                nodo.derecha = this._removerPriv(nodo.derecha, sucesor.data.nombre, sucesor.data.codigoBarras, resultado);
                 resultado.aprobado = true;
             }
         }
@@ -186,9 +190,9 @@ class ArbolAVL {
         return nodo;
     }
 
-    remover(nombre) {
+    remover(nombre, codigoBarras) {
         const resultado = { aprobado: false };
-        this.raiz = this._removerPriv(this.raiz, nombre, resultado);
+        this.raiz = this._removerPriv(this.raiz, nombre, codigoBarras, resultado);
         if (resultado.aprobado) this.size--;
         return resultado.aprobado;
     }

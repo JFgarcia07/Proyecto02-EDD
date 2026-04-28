@@ -9,69 +9,55 @@ class Catalogo {
         this.arbolBMas             = new ArbolBMas(3);
         this.totalProductos        = 0;
 
-        this.pilaDeshacer = [];
+        this.pilaDeshacer = new Stack();
     }
 
     agregarProducto(producto) {
-        // Verificar duplicado por código de barras
-        if (this.tablaHash.buscar(producto.codigoBarras) !== null) {
-            return false;
-        }
+        if (this.tablaHash.buscar(producto.codigoBarras) !== null) return false;
 
-        // Paso 1 — Lista no ordenada
-        if (!this.listaProductos.insertar(producto)) {
-            return false;
-        }
-    
-        // Paso 2 — Lista ordenada
+        if (!this.listaProductos.insertar(producto)) return false;
+
         if (!this.listaProductosOrdenada.insertar(producto)) {
             this.listaProductos.remover(producto.codigoBarras);
             return false;
         }
 
-        // Paso 3 — Árbol AVL
         if (!this.arbolAVL.insertar(producto)) {
             this.listaProductos.remover(producto.codigoBarras);
             this.listaProductosOrdenada.remover(producto.codigoBarras);
             return false;
         }
 
-        // Paso 4 — Tabla Hash
         if (!this.tablaHash.insertar(producto)) {
             this.listaProductos.remover(producto.codigoBarras);
             this.listaProductosOrdenada.remover(producto.codigoBarras);
-            this.arbolAVL.remover(producto.nombre);
+            this.arbolAVL.remover(producto.nombre, producto.codigoBarras);
             return false;
         }
 
-        // Paso 5 — Árbol B
         if (!this.arbolB.insertar(producto)) {
             this.listaProductos.remover(producto.codigoBarras);
             this.listaProductosOrdenada.remover(producto.codigoBarras);
-            this.arbolAVL.remover(producto.nombre);
+            this.arbolAVL.remover(producto.nombre, producto.codigoBarras);
             this.tablaHash.remover(producto.codigoBarras);
             return false;
         }
 
-        // Paso 6 — Árbol B+ (siempre retorna true)
         this.arbolBMas.insertar(producto);
-
-        // Guardar en pila para poder deshacer
         this.pilaDeshacer.push({ accion: 'agregar', producto });
-
         this.totalProductos++;
         return true;
     }
 
-    removerProducto(codigoBarras){
+    removerProducto(codigoBarras) {
         const producto = this.tablaHash.buscar(codigoBarras);
-        if (producto == null) return false;
+        if (producto === null) return false;
 
-        this.pilaDeshacer.push({ accion: 'remover', producto: {...producto} });
+        this.pilaDeshacer.push({ accion: 'remover', producto: { ...producto } });
 
         this.listaProductos.remover(producto.codigoBarras);
         this.listaProductosOrdenada.remover(producto.codigoBarras);
-        this.arbolAVL.remover(producto.nombre);
+        this.arbolAVL.remover(producto.nombre, producto.codigoBarras);
         this.tablaHash.remover(producto.codigoBarras);
         this.arbolB.remover(producto.fechaExpiracion);
         this.arbolBMas.remover(producto.categoria, producto.codigoBarras);
@@ -81,14 +67,14 @@ class Catalogo {
     }
 
     deshacer() {
-        if (this.pilaDeshacer.length === 0) return null;
+        if (this.pilaDeshacer.estaVacia()) return null;
 
         const operacion = this.pilaDeshacer.pop();
 
         if (operacion.accion === 'agregar') {
             this.listaProductos.remover(operacion.producto.codigoBarras);
             this.listaProductosOrdenada.remover(operacion.producto.codigoBarras);
-            this.arbolAVL.remover(operacion.producto.nombre);
+            this.arbolAVL.remover(operacion.producto.nombre, operacion.producto.codigoBarras);
             this.tablaHash.remover(operacion.producto.codigoBarras);
             this.arbolB.remover(operacion.producto.fechaExpiracion);
             this.arbolBMas.remover(operacion.producto.categoria, operacion.producto.codigoBarras);

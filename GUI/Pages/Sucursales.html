@@ -42,19 +42,19 @@
 
             <div class="col-md-4">
                 <label class="form-label" for="b-entry">Tiempo de ingreso <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-entry" rows="2" placeholder="Ej: 5"></textarea>
+                <input type="number" class="form-control form-control-sm" id="p-entry" placeholder="0" min="0">
                 <div class="form-text">Segundos que tarda en procesar la llegada de un producto.</div>
             </div>
 
             <div class="col-md-4">
                 <label class="form-label" for="b-transfer">Tiempo de preparación <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-transfer" rows="2" placeholder="Ej: 3"></textarea>
+                <input type="number" class="form-control form-control-sm" id="p-transfer" placeholder="0" min="0">
                 <div class="form-text">Segundos para preparar un producto antes de enviarlo.</div>
             </div>
 
             <div class="col-md-4">
                 <label class="form-label" for="b-dispatch">Intervalo de despacho <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-dispatch" rows="2" placeholder="Ej: 2"></textarea>
+                <input type="number" class="form-control form-control-sm" id="b-dispatch" placeholder="0" min="0">
                 <div class="form-text">Segundos entre cada envío que la sucursal puede realizar.</div>
             </div>
 
@@ -110,17 +110,12 @@
 
 <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../../src/SidebarLoader.js"></script>
-<script src="../src/Branch.js"></script>
-<script src="../src/main.js"></script>
+<script src="../../src/main.js"></script>
 <script>
     function limpiarFormulario() {
-        ['b-id','b-name','b-location','b-entry','b-transfer','b-dispatch']
-            .forEach(id => document.getElementById(id).value = '');
+        ['b-id','b-name','b-location','p-entry','p-transfer','b-dispatch']
+            .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
         document.getElementById('branch-msg').textContent = '';
-    }
-
-    function addBranch() {
-        alert('Pendiente: conectar clase Branch');
     }
 </script>
 
