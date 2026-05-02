@@ -61,22 +61,74 @@ function undoProduct() {
 function filterProducts() {
     if (!catalogo) return;
 
-    const texto    = document.getElementById('filter-search')?.value.toLowerCase() || '';
+    const sortBy   = document.getElementById('sort-by')?.value || 'all';
+    const texto    = document.getElementById('filter-search')?.value.trim() || '';
     const cat      = document.getElementById('filter-category')?.value || '';
     const sucursal = document.getElementById('filter-branch')?.value || '';
     const estado   = document.getElementById('filter-status')?.value || '';
-    const sortBy   = document.getElementById('sort-by')?.value || 'name';
 
-    let lista = sortBy === 'name' ? catalogo.listaPorNombres() : catalogo.listarTodos();
+    const searchCol  = document.getElementById('search-box-col');
+    const dateStart  = document.getElementById('date-range-start');
+    const dateEnd    = document.getElementById('date-range-end');
 
-    if (texto)    lista = lista.filter(p => p.nombre.toLowerCase().includes(texto) || p.codigoBarras.includes(texto));
-    if (cat)      lista = lista.filter(p => p.categoria === cat);
-    if (sucursal) lista = lista.filter(p => p.sucursalId === sucursal);
-    if (estado)   lista = lista.filter(p => p.estado === estado);
+    if (sortBy === 'expiry') {
+        if (searchCol) searchCol.style.display = 'none';
+        if (dateStart) dateStart.style.display = 'block';
+        if (dateEnd)   dateEnd.style.display   = 'block';
+    } else {
+        if (searchCol) searchCol.style.display = 'block';
+        if (dateStart) dateStart.style.display = 'none';
+        if (dateEnd)   dateEnd.style.display   = 'none';
+    }
 
-    if (sortBy === 'price')  lista.sort((a, b) => a.precio - b.precio);
-    if (sortBy === 'stock')  lista.sort((a, b) => a.stock - b.stock);
-    if (sortBy === 'expiry') lista.sort((a, b) => (a.fechaExpiracion || '').localeCompare(b.fechaExpiracion || ''));
+    let lista      = [];
+    let estructura = '';
+    const t0       = performance.now();
+
+    if (sortBy === 'name') {
+        estructura = 'Árbol AVL — O(log n)';
+        if (texto) {
+            const r = catalogo.buscarPorNombre(texto);
+            lista   = r ? [r] : catalogo.listaPorNombres().filter(p =>
+                p.nombre.toLowerCase().includes(texto.toLowerCase())
+            );
+        } else {
+            lista = catalogo.listaPorNombres();
+        }
+    } else if (sortBy === 'barcode') {
+        estructura = 'Tabla Hash — O(1)';
+        if (texto) {
+            const r = catalogo.buscarPorCodigoBarras(texto);
+            lista   = r ? [r] : [];
+        }
+    } else if (sortBy === 'category') {
+        estructura = 'Árbol B+ — O(log n)';
+        if (texto) {
+            lista = catalogo.buscarPorCategoria(texto);
+        }
+    } else if (sortBy === 'expiry') {
+        estructura    = 'Árbol B — O(log n)';
+        const fecha1  = document.getElementById('filter-date1')?.value || '';
+        const fecha2  = document.getElementById('filter-date2')?.value || '';
+        if (fecha1 && fecha2) {
+            lista = catalogo.buscarPorFechas(fecha1, fecha2);
+        }
+    } else {
+        lista = catalogo.listaPorNombres();
+    }
+
+    const t1 = performance.now();
+
+    if (cat)      lista = lista.filter(p => p.categoria   === cat);
+    if (sucursal) lista = lista.filter(p => p.sucursalId  === sucursal);
+    if (estado)   lista = lista.filter(p => p.estado      === estado);
+
+    const searchTime = document.getElementById('search-time');
+    if (searchTime && estructura) {
+        searchTime.innerHTML = `<span class="text-muted" style="font-size:12px">
+            ${lista.length} resultado(s) — ${(t1 - t0).toFixed(4)}ms — ${estructura}
+        </span>`;
+    }
 
     renderTablaProductos(lista);
 }

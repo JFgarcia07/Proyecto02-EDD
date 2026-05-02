@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,94 +8,93 @@
     <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
+
 <body>
 
-<div id="sidebar-container"></div>
+    <div id="sidebar-container"></div>
 
-<!-- Topbar -->
-<div id="topbar">
-    <h5 class="topbar-title">Gestión de Productos</h5>
-    <div class="topbar-actions">
-        <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
-        <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
-    </div>
-</div>
-
-<div id="main-content">
-
-    <!-- ── Formulario agregar producto ── -->
-    <form>
-        <div class="content-card" >
-        <div class="card-header-title">Agregar producto</div>
-
-        <div class="row g-2 mb-2">
-            <div class="col-md-3">
-                <label class="form-label-sm">Nombre</label>
-                <input type="text" class="form-control form-control-sm"
-                    id="p-name" placeholder="Nombre del producto" required>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label-sm">Código de barra</label>
-                <input type="text" class="form-control form-control-sm"
-                    id="p-barcode" placeholder="0000000000000" required>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label-sm">Categoría</label>
-                <input type="text" class="form-control form-control-sm"
-                    id="p-category" placeholder="Ej: Lácteos" required>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label-sm">Marca</label>
-                <input type="text" class="form-control form-control-sm"
-                    id="p-brand" placeholder="Marca" required>
-            </div>
-            <div class="col-md-1">
-                <label class="form-label-sm">Precio (Q)</label>
-                <input type="number" class="form-control form-control-sm"
-                    id="p-price" placeholder="0.00" min="0" step="0.01" required>
-            </div>
-            <div class="col-md-1">
-                <label class="form-label-sm">Stock</label>
-                <input type="number" class="form-control form-control-sm"
-                    id="p-stock" placeholder="0" min="0" required>
-            </div>
+    <!-- Topbar -->
+    <div id="topbar">
+        <h5 class="topbar-title">Gestión de Productos</h5>
+        <div class="topbar-actions">
+            <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
+            <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
         </div>
-        <div class="row g-2 align-items-end">
-            <div class="col-md-2">
-                <label class="form-label-sm">Fecha caducidad</label>
-                <input type="date" class="form-control form-control-sm" id="p-expiry" required>
-            </div>
-            <div class="col-md-3">
-                <label class="form-label-sm">Sucursal</label>
-                <select class="form-select form-select-sm" id="p-branch" required>
-                    <option value="">Seleccionar sucursal...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-sm btn-danger w-100" onclick="addProduct()">
-                    + Agregar producto
-                </button>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-sm btn-outline-secondary w-100" onclick="undoProduct()">
-                    ↩ Deshacer (rollback)
-                </button>
-            </div>
-            <div class="col-md-3">
-                <div id="product-msg" style="font-size:12px"></div>
-            </div>
-        </div>
-    </form>
     </div>
 
-    <!-- ── Filtros y búsqueda rápida ── -->
+    <div id="main-content">
+
+        <!-- ── Formulario agregar producto ── -->
+        <form>
+            <div class="content-card">
+                <div class="card-header-title">Agregar producto</div>
+
+                <div class="row g-2 mb-2">
+                    <div class="col-md-3">
+                        <label class="form-label-sm">Nombre</label>
+                        <input type="text" class="form-control form-control-sm" id="p-name"
+                            placeholder="Nombre del producto" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-sm">Código de barra</label>
+                        <input type="text" class="form-control form-control-sm" id="p-barcode"
+                            placeholder="0000000000000" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-sm">Categoría</label>
+                        <input type="text" class="form-control form-control-sm" id="p-category"
+                            placeholder="Ej: Lácteos" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-sm">Marca</label>
+                        <input type="text" class="form-control form-control-sm" id="p-brand" placeholder="Marca"
+                            required>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-sm">Precio (Q)</label>
+                        <input type="number" class="form-control form-control-sm" id="p-price" placeholder="0.00"
+                            min="0" step="0.01" required>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-sm">Stock</label>
+                        <input type="number" class="form-control form-control-sm" id="p-stock" placeholder="0" min="0"
+                            required>
+                    </div>
+                </div>
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-2">
+                        <label class="form-label-sm">Fecha caducidad</label>
+                        <input type="date" class="form-control form-control-sm" id="p-expiry" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label-sm">Sucursal</label>
+                        <select class="form-select form-select-sm" id="p-branch" required>
+                            <option value="">Seleccionar sucursal...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-danger w-100" onclick="addProduct()">
+                            + Agregar producto
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-outline-secondary w-100" onclick="undoProduct()">
+                            ↩ Deshacer (rollback)
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="product-msg" style="font-size:12px"></div>
+                    </div>
+                </div>
+        </form>
+    </div>
+
     <div class="content-card">
         <div class="card-header-title">Inventario global</div>
 
         <div class="row g-2 align-items-center mb-3">
-            <div class="col-md-3">
-                <input type="text" class="form-control form-control-sm"
-                    id="filter-search" placeholder="🔍 Filtrar por nombre o código..."
+            <div class="col-md-3" id="search-box-col">
+                <input type="text" class="form-control form-control-sm" id="filter-search" placeholder="🔍 Filtrar..."
                     oninput="filterProducts()">
             </div>
             <div class="col-md-2">
@@ -117,15 +117,22 @@
             </div>
             <div class="col-md-2">
                 <select class="form-select form-select-sm" id="sort-by" onchange="filterProducts()">
-                    <option value="name">Ordenar por nombre</option>
-                    <option value="price">Ordenar por precio</option>
-                    <option value="expiry">Ordenar por caducidad</option>
-                    <option value="stock">Ordenar por stock</option>
+                    <option value="all">Ver todos</option>
+                    <option value="name">Por nombre — AVL</option>
+                    <option value="barcode">Por código — Hash</option>
+                    <option value="category">Por categoría — B+</option>
+                    <option value="expiry">Por fecha — Árbol B</option>
                 </select>
             </div>
-            <div class="col-md-1 text-end">
-                <span class="badge bg-secondary" id="product-count">0</span>
+            <div class="col-md-2" id="date-range-start" style="display:none">
+                <input type="date" class="form-control form-control-sm" id="filter-date1" onchange="filterProducts()">
+                <div class="form-text">Fecha inicio</div>
             </div>
+            <div class="col-md-2" id="date-range-end" style="display:none">
+                <input type="date" class="form-control form-control-sm" id="filter-date2" onchange="filterProducts()">
+                <div class="form-text">Fecha fin</div>
+            </div>
+            <div class="col" id="search-time"></div>
         </div>
 
         <div class="table-responsive">
@@ -156,28 +163,29 @@
         </div>
     </div>
 
-</div><!-- fin main-content -->
+    </div><!-- fin main-content -->
 
 
-<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../src/SidebarLoader.js"></script>
-<script src="../../src/Estructuras/Nodo.js"></script>
-<script src="../../src/Arboles/AVLNodo.js"></script>
-<script src="../../src/Arboles/BNodo.js"></script>
-<script src="../../src/Arboles/BMasNodo.js"></script>
-<script src="../../src/TablaHash/NodoHash.js"></script>
-<script src="../../src/Estructuras/Producto.js"></script>
-<script src="../../src/Estructuras/ListaProductos.js"></script>
-<script src="../../src/Estructuras/ListaProductosOrdenada.js"></script>
-<script src="../../src/Arboles/ArbolAVL.js"></script>
-<script src="../../src/Arboles/ArbolB.js"></script>
-<script src="../../src/Arboles/ArbolBMas.js"></script>
-<script src="../../src/TablaHash/TablaHash.js"></script>
-<script src="../../src/Logica/StackNodo.js"></script>
-<script src="../../src/Logica/Stack.js"></script>
-<script src="../../src/Logica/Catalogo.js"></script>
-<script src="../../src/Storage.js"></script>
-<script src="../../src/Productos.js"></script>
+    <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/SidebarLoader.js"></script>
+    <script src="../../src/Estructuras/Nodo.js"></script>
+    <script src="../../src/Arboles/AVLNodo.js"></script>
+    <script src="../../src/Arboles/BNodo.js"></script>
+    <script src="../../src/Arboles/BMasNodo.js"></script>
+    <script src="../../src/TablaHash/NodoHash.js"></script>
+    <script src="../../src/Estructuras/Producto.js"></script>
+    <script src="../../src/Estructuras/ListaProductos.js"></script>
+    <script src="../../src/Estructuras/ListaProductosOrdenada.js"></script>
+    <script src="../../src/Arboles/ArbolAVL.js"></script>
+    <script src="../../src/Arboles/ArbolB.js"></script>
+    <script src="../../src/Arboles/ArbolBMas.js"></script>
+    <script src="../../src/TablaHash/TablaHash.js"></script>
+    <script src="../../src/Logica/StackNodo.js"></script>
+    <script src="../../src/Logica/Stack.js"></script>
+    <script src="../../src/Logica/Catalogo.js"></script>
+    <script src="../../src/Storage.js"></script>
+    <script src="../../src/Productos.js"></script>
 
 </body>
+
 </html>
