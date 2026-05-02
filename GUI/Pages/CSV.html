@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar CSV — SuperMarket EDD</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+    <div id="sidebar-container"></div>
+
+    <div id="topbar">
+        <h5 class="topbar-title">Carga de Archivos CSV</h5>
+    </div>
+
+    <div id="main-content">
+
+        <div class="content-card">
+            <div class="card-header-title">1. Cargar sucursales</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Debe cargarse primero. Sin sucursales no se pueden cargar productos ni conexiones.
+            </p>
+            <p style="font-size:12px">
+                Formato: <code>ID, Nombre, Ubicación, t_ingreso, t_traspaso, t_despacho</code>
+            </p>
+            <input type="file" class="form-control form-control-sm mt-2" accept=".csv"
+                onchange="cargarCSVSucursales(this)">
+            <div id="branch-csv-log" class="mt-2" style="font-size:12px"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">2. Cargar conexiones entre sucursales</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Requiere que las sucursales ya estén cargadas.
+            </p>
+            <p style="font-size:12px">
+                Formato: <code>OrigenID, DestinoID, Tiempo, Costo</code>
+            </p>
+            <input type="file" class="form-control form-control-sm mt-2" accept=".csv"
+                onchange="cargarCSVConexiones(this)">
+            <div id="conexion-csv-log" class="mt-2" style="font-size:12px"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">3. Cargar productos</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Requiere que las sucursales ya estén cargadas. Mínimo 1000 productos.
+            </p>
+            <p style="font-size:12px">
+                Formato: <code>SucursalID, Nombre, CodigoBarra, Categoria, FechaCaducidad, Marca, Precio, Stock</code>
+            </p>
+            <input type="file" class="form-control form-control-sm mt-2" accept=".csv"
+                onchange="cargarCSVProductos(this)">
+            <div id="product-csv-log" class="mt-2" style="font-size:12px"></div>
+        </div>
+
+    </div>
+
+    <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/SidebarLoader.js"></script>
+    <script src="../../src/Storage.js"></script>
+    <script src="../../src/CSV.js"></script>
+
+</body>
+
+</html>

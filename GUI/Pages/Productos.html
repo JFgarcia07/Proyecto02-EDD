@@ -93,14 +93,26 @@
         <div class="card-header-title">Inventario global</div>
 
         <div class="row g-2 align-items-center mb-3">
-            <div class="col-md-3" id="search-box-col">
-                <input type="text" class="form-control form-control-sm" id="filter-search" placeholder="🔍 Filtrar..."
+            <div class="col-md-2">
+                <select class="form-select form-select-sm" id="sort-by" onchange="filterProducts()">
+                    <option value="">Seleccionar búsqueda...</option>
+                    <option value="name">Por nombre — AVL</option>
+                    <option value="barcode">Por código — Hash</option>
+                    <option value="category">Por categoría — B+</option>
+                    <option value="expiry">Por fecha — Árbol B</option>
+                </select>
+            </div>
+            <div class="col-md-3" id="search-box-col" style="display:none">
+                <input type="text" class="form-control form-control-sm" id="filter-search" placeholder="Escribe aquí..."
                     oninput="filterProducts()">
             </div>
-            <div class="col-md-2">
-                <select class="form-select form-select-sm" id="filter-category" onchange="filterProducts()">
-                    <option value="">Todas las categorías</option>
-                </select>
+            <div class="col-md-2" id="date-range-start" style="display:none">
+                <input type="date" class="form-control form-control-sm" id="filter-date1" onchange="filterProducts()">
+                <div class="form-text">Fecha inicio</div>
+            </div>
+            <div class="col-md-2" id="date-range-end" style="display:none">
+                <input type="date" class="form-control form-control-sm" id="filter-date2" onchange="filterProducts()">
+                <div class="form-text">Fecha fin</div>
             </div>
             <div class="col-md-2">
                 <select class="form-select form-select-sm" id="filter-branch" onchange="filterProducts()">
@@ -114,23 +126,6 @@
                     <option value="En tránsito">En tránsito</option>
                     <option value="Agotado">Agotado</option>
                 </select>
-            </div>
-            <div class="col-md-2">
-                <select class="form-select form-select-sm" id="sort-by" onchange="filterProducts()">
-                    <option value="all">Ver todos</option>
-                    <option value="name">Por nombre — AVL</option>
-                    <option value="barcode">Por código — Hash</option>
-                    <option value="category">Por categoría — B+</option>
-                    <option value="expiry">Por fecha — Árbol B</option>
-                </select>
-            </div>
-            <div class="col-md-2" id="date-range-start" style="display:none">
-                <input type="date" class="form-control form-control-sm" id="filter-date1" onchange="filterProducts()">
-                <div class="form-text">Fecha inicio</div>
-            </div>
-            <div class="col-md-2" id="date-range-end" style="display:none">
-                <input type="date" class="form-control form-control-sm" id="filter-date2" onchange="filterProducts()">
-                <div class="form-text">Fecha fin</div>
             </div>
             <div class="col" id="search-time"></div>
         </div>

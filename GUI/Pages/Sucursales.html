@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,187 +8,194 @@
     <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
+
 <body>
 
-<div id="sidebar-container"></div>
+    <div id="sidebar-container"></div>
 
-<div id="topbar">
-    <h5 class="topbar-title">Gestión de Sucursales</h5>
-</div>
-
-<div id="main-content">
-
-    <div class="content-card">
-        <div class="card-header-title">Agregar sucursal</div>
-
-        <div class="row g-3">
-
-            <div class="col-md-4">
-                <label class="form-label" for="b-id">ID de sucursal <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-id" rows="2" placeholder="Ej: S001" maxlength="20"></textarea>
-                <div class="form-text">Identificador único de la sucursal.</div>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label" for="b-name">Nombre <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-name" rows="2" placeholder="Ej: Sucursal Central"></textarea>
-                <div class="form-text">Nombre descriptivo de la sucursal.</div>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label" for="b-location">Ubicación <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="b-location" rows="2" placeholder="Ej: Zona 1, Ciudad de Guatemala"></textarea>
-                <div class="form-text">Dirección o zona geográfica.</div>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label">Tiempo de ingreso <span class="text-danger">*</span></label>
-                <input type="number" class="form-control form-control-sm" id="p-entry" placeholder="0" min="0">
-                <div class="form-text">Segundos que tarda en procesar la llegada de un producto.</div>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label">Tiempo de preparación <span class="text-danger">*</span></label>
-                <input type="number" class="form-control form-control-sm" id="p-transfer" placeholder="0" min="0">
-                <div class="form-text">Segundos para preparar un producto antes de enviarlo.</div>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label">Intervalo de despacho <span class="text-danger">*</span></label>
-                <input type="number" class="form-control form-control-sm" id="b-dispatch" placeholder="0" min="0">
-                <div class="form-text">Segundos entre cada envío que la sucursal puede realizar.</div>
-            </div>
-
-        </div>
-
-        <div class="row g-2 mt-3 align-items-center">
-            <div class="col-md-2">
-                <button class="btn btn-danger w-100" onclick="addBranch()">+ Agregar sucursal</button>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-outline-secondary w-100" onclick="limpiarFormulario()">Limpiar</button>
-            </div>
-            <div class="col-md-8">
-                <div id="branch-msg" style="font-size:13px"></div>
-            </div>
+    <div id="topbar">
+        <h5 class="topbar-title">Gestión de Sucursales</h5>
+        <div class="topbar-actions">
+            <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
+            <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
         </div>
     </div>
 
-    <div class="content-card">
-        <div class="card-header-title">
-            Sucursales registradas
-            <span class="badge bg-secondary ms-2" id="branch-count">0</span>
+    <div id="main-content">
+
+        <div class="content-card">
+            <div class="card-header-title">Agregar sucursal</div>
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label" for="b-id">ID de sucursal <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="b-id" rows="2" placeholder="Ej: S001" maxlength="20"></textarea>
+                    <div class="form-text">Identificador único de la sucursal.</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label" for="b-name">Nombre <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="b-name" rows="2" placeholder="Ej: Sucursal Central"></textarea>
+                    <div class="form-text">Nombre descriptivo de la sucursal.</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label" for="b-location">Ubicación <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="b-location" rows="2"
+                        placeholder="Ej: Zona 1, Ciudad de Guatemala"></textarea>
+                    <div class="form-text">Dirección o zona geográfica.</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Tiempo de ingreso <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm" id="p-entry" placeholder="0" min="0">
+                    <div class="form-text">Segundos que tarda en procesar la llegada de un producto.</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Tiempo de preparación <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm" id="p-transfer" placeholder="0" min="0">
+                    <div class="form-text">Segundos para preparar un producto antes de enviarlo.</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Intervalo de despacho <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm" id="b-dispatch" placeholder="0" min="0">
+                    <div class="form-text">Segundos entre cada envío que la sucursal puede realizar.</div>
+                </div>
+
+            </div>
+
+            <div class="row g-2 mt-3 align-items-center">
+                <div class="col-md-2">
+                    <button class="btn btn-danger w-100" onclick="addBranch()">+ Agregar sucursal</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-secondary w-100" onclick="limpiarFormulario()">Limpiar</button>
+                </div>
+                <div class="col-md-8">
+                    <div id="branch-msg" style="font-size:13px"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="table-responsive">
-            <table class="table custom-table mb-0">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>T. Ingreso (s)</th>
-                        <th>T. Preparación (s)</th>
-                        <th>Intervalo despacho (s)</th>
-                        <th>Productos</th>
-                        <th>Cola ingreso</th>
-                        <th>Cola traspaso</th>
-                        <th>Cola salida</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="branch-list">
-                    <tr>
-                        <td colspan="11" class="text-center text-muted py-4">Sin sucursales registradas</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="content-card">
+            <div class="card-header-title">
+                Sucursales registradas
+                <span class="badge bg-secondary ms-2" id="branch-count">0</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table custom-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Ubicación</th>
+                            <th>T. Ingreso (s)</th>
+                            <th>T. Preparación (s)</th>
+                            <th>Intervalo despacho (s)</th>
+                            <th>Productos</th>
+                            <th>Cola ingreso</th>
+                            <th>Cola traspaso</th>
+                            <th>Cola salida</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="branch-list">
+                        <tr>
+                            <td colspan="11" class="text-center text-muted py-4">Sin sucursales registradas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <div class="content-card">
+            <div class="card-header-title">Agregar conexión entre sucursales</div>
+
+            <div class="row g-3 align-items-end">
+
+                <div class="col-md-2">
+                    <label class="form-label">Sucursal origen <span class="text-danger">*</span></label>
+                    <select class="form-select form-select-sm" id="c-origin">
+                        <option value="">Seleccionar...</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Sucursal destino <span class="text-danger">*</span></label>
+                    <select class="form-select form-select-sm" id="c-dest">
+                        <option value="">Seleccionar...</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Tiempo (segundos) <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm" id="c-time" placeholder="Ej: 10" min="0">
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Costo (Q) <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control form-control-sm" id="c-cost" placeholder="Ej: 50" min="0">
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Tipo de conexión</label>
+                    <select class="form-select form-select-sm" id="c-bidi">
+                        <option value="true">Bidireccional</option>
+                        <option value="false">Unidireccional</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-danger w-100" onclick="addConexion()">+ Agregar conexión</button>
+                </div>
+
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <div id="conexion-msg" style="font-size:13px"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">
+                Conexiones registradas
+                <span class="badge bg-secondary ms-2" id="conexion-count">0</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table custom-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Tiempo (s)</th>
+                            <th>Costo (Q)</th>
+                            <th>Tipo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conexion-list">
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">Sin conexiones registradas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 
-    <div class="content-card">
-        <div class="card-header-title">Agregar conexión entre sucursales</div>
-
-        <div class="row g-3 align-items-end">
-
-            <div class="col-md-2">
-                <label class="form-label">Sucursal origen <span class="text-danger">*</span></label>
-                <select class="form-select form-select-sm" id="c-origin">
-                    <option value="">Seleccionar...</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label">Sucursal destino <span class="text-danger">*</span></label>
-                <select class="form-select form-select-sm" id="c-dest">
-                    <option value="">Seleccionar...</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label">Tiempo (segundos) <span class="text-danger">*</span></label>
-                <input type="number" class="form-control form-control-sm" id="c-time" placeholder="Ej: 10" min="0">
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label">Costo (Q) <span class="text-danger">*</span></label>
-                <input type="number" class="form-control form-control-sm" id="c-cost" placeholder="Ej: 50" min="0">
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label">Tipo de conexión</label>
-                <select class="form-select form-select-sm" id="c-bidi">
-                    <option value="true">Bidireccional</option>
-                    <option value="false">Unidireccional</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <button class="btn btn-danger w-100" onclick="addConexion()">+ Agregar conexión</button>
-            </div>
-
-        </div>
-
-        <div class="row mt-2">
-            <div class="col">
-                <div id="conexion-msg" style="font-size:13px"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-card">
-        <div class="card-header-title">
-            Conexiones registradas
-            <span class="badge bg-secondary ms-2" id="conexion-count">0</span>
-        </div>
-
-        <div class="table-responsive">
-            <table class="table custom-table mb-0">
-                <thead>
-                    <tr>
-                        <th>Origen</th>
-                        <th>Destino</th>
-                        <th>Tiempo (s)</th>
-                        <th>Costo (Q)</th>
-                        <th>Tipo</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="conexion-list">
-                    <tr>
-                        <td colspan="6" class="text-center text-muted py-4">Sin conexiones registradas</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-</div>
-
-<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../src/SidebarLoader.js"></script>
-<script src="../../src/Storage.js"></script>
-<script src="../../src/Sucursales.js"></script>
+    <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/SidebarLoader.js"></script>
+    <script src="../../src/Storage.js"></script>
+    <script src="../../src/Sucursales.js"></script>
 
 </body>
+
 </html>
