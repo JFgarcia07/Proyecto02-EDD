@@ -41,19 +41,19 @@
             </div>
 
             <div class="col-md-4">
-                <label class="form-label" for="b-entry">Tiempo de ingreso <span class="text-danger">*</span></label>
+                <label class="form-label">Tiempo de ingreso <span class="text-danger">*</span></label>
                 <input type="number" class="form-control form-control-sm" id="p-entry" placeholder="0" min="0">
                 <div class="form-text">Segundos que tarda en procesar la llegada de un producto.</div>
             </div>
 
             <div class="col-md-4">
-                <label class="form-label" for="b-transfer">Tiempo de preparación <span class="text-danger">*</span></label>
+                <label class="form-label">Tiempo de preparación <span class="text-danger">*</span></label>
                 <input type="number" class="form-control form-control-sm" id="p-transfer" placeholder="0" min="0">
                 <div class="form-text">Segundos para preparar un producto antes de enviarlo.</div>
             </div>
 
             <div class="col-md-4">
-                <label class="form-label" for="b-dispatch">Intervalo de despacho <span class="text-danger">*</span></label>
+                <label class="form-label">Intervalo de despacho <span class="text-danger">*</span></label>
                 <input type="number" class="form-control form-control-sm" id="b-dispatch" placeholder="0" min="0">
                 <div class="form-text">Segundos entre cada envío que la sucursal puede realizar.</div>
             </div>
@@ -71,7 +71,6 @@
                 <div id="branch-msg" style="font-size:13px"></div>
             </div>
         </div>
-
     </div>
 
     <div class="content-card">
@@ -106,18 +105,89 @@
         </div>
     </div>
 
+    <div class="content-card">
+        <div class="card-header-title">Agregar conexión entre sucursales</div>
+
+        <div class="row g-3 align-items-end">
+
+            <div class="col-md-2">
+                <label class="form-label">Sucursal origen <span class="text-danger">*</span></label>
+                <select class="form-select form-select-sm" id="c-origin">
+                    <option value="">Seleccionar...</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Sucursal destino <span class="text-danger">*</span></label>
+                <select class="form-select form-select-sm" id="c-dest">
+                    <option value="">Seleccionar...</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Tiempo (segundos) <span class="text-danger">*</span></label>
+                <input type="number" class="form-control form-control-sm" id="c-time" placeholder="Ej: 10" min="0">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Costo (Q) <span class="text-danger">*</span></label>
+                <input type="number" class="form-control form-control-sm" id="c-cost" placeholder="Ej: 50" min="0">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Tipo de conexión</label>
+                <select class="form-select form-select-sm" id="c-bidi">
+                    <option value="true">Bidireccional</option>
+                    <option value="false">Unidireccional</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-danger w-100" onclick="addConexion()">+ Agregar conexión</button>
+            </div>
+
+        </div>
+
+        <div class="row mt-2">
+            <div class="col">
+                <div id="conexion-msg" style="font-size:13px"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header-title">
+            Conexiones registradas
+            <span class="badge bg-secondary ms-2" id="conexion-count">0</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table custom-table mb-0">
+                <thead>
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Tiempo (s)</th>
+                        <th>Costo (Q)</th>
+                        <th>Tipo</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="conexion-list">
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">Sin conexiones registradas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
 
 <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../../src/SidebarLoader.js"></script>
-<script src="../../src/main.js"></script>
-<script>
-    function limpiarFormulario() {
-        ['b-id','b-name','b-location','p-entry','p-transfer','b-dispatch']
-            .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-        document.getElementById('branch-msg').textContent = '';
-    }
-</script>
+<script src="../../src/Storage.js"></script>
+<script src="../../src/Sucursales.js"></script>
 
 </body>
 </html>

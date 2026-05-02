@@ -1,13 +1,24 @@
 class Grafo {
     constructor(){
         this.sucursales = {};
-        this.arista = {};
+        this.aristas = {};
     }
 
     agregarSucursal(rama) {
         if (this.sucursales[rama.id]) return false;
         this.sucursales[rama.id] = rama;
         this.aristas[rama.id]    = [];
+        return true;
+    }
+
+    agregarConexion(origenId, destinoId, tiempo, costo, bidireccional = true) {
+        if (!this.sucursales[origenId] || !this.sucursales[destinoId]) return false;
+        if (this.existeConexion(origenId, destinoId)) return false;
+
+        this.aristas[origenId].push(new Arista(destinoId, tiempo, costo, bidireccional));
+        if (bidireccional) {
+            this.aristas[destinoId].push(new Arista(origenId, tiempo, costo, bidireccional));
+        }
         return true;
     }
 

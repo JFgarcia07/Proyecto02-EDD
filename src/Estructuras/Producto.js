@@ -7,7 +7,7 @@ class Producto {
         fechaExpiracion = '',
         marca           = '',
         precio          = 0.0,
-        stock           = 0
+        stock           = 0,
     ){
         this.nombre = nombre;
         this.codigoBarras = codigoBarras;

@@ -23,50 +23,50 @@
 <div id="main-content">
 
     <!-- ── Formulario agregar producto ── -->
-    <div class="content-card">
+    <form>
+        <div class="content-card" >
         <div class="card-header-title">Agregar producto</div>
 
         <div class="row g-2 mb-2">
             <div class="col-md-3">
                 <label class="form-label-sm">Nombre</label>
                 <input type="text" class="form-control form-control-sm"
-                    id="p-name" placeholder="Nombre del producto">
+                    id="p-name" placeholder="Nombre del producto" required>
             </div>
             <div class="col-md-2">
                 <label class="form-label-sm">Código de barra</label>
                 <input type="text" class="form-control form-control-sm"
-                    id="p-barcode" placeholder="0000000000000">
+                    id="p-barcode" placeholder="0000000000000" required>
             </div>
             <div class="col-md-2">
                 <label class="form-label-sm">Categoría</label>
                 <input type="text" class="form-control form-control-sm"
-                    id="p-category" placeholder="Ej: Lácteos">
+                    id="p-category" placeholder="Ej: Lácteos" required>
             </div>
             <div class="col-md-2">
                 <label class="form-label-sm">Marca</label>
                 <input type="text" class="form-control form-control-sm"
-                    id="p-brand" placeholder="Marca">
+                    id="p-brand" placeholder="Marca" required>
             </div>
             <div class="col-md-1">
                 <label class="form-label-sm">Precio (Q)</label>
                 <input type="number" class="form-control form-control-sm"
-                    id="p-price" placeholder="0.00" min="0" step="0.01">
+                    id="p-price" placeholder="0.00" min="0" step="0.01" required>
             </div>
             <div class="col-md-1">
                 <label class="form-label-sm">Stock</label>
                 <input type="number" class="form-control form-control-sm"
-                    id="p-stock" placeholder="0" min="0">
+                    id="p-stock" placeholder="0" min="0" required>
             </div>
         </div>
-
         <div class="row g-2 align-items-end">
             <div class="col-md-2">
                 <label class="form-label-sm">Fecha caducidad</label>
-                <input type="date" class="form-control form-control-sm" id="p-expiry">
+                <input type="date" class="form-control form-control-sm" id="p-expiry" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label-sm">Sucursal</label>
-                <select class="form-select form-select-sm" id="p-branch">
+                <select class="form-select form-select-sm" id="p-branch" required>
                     <option value="">Seleccionar sucursal...</option>
                 </select>
             </div>
@@ -84,6 +84,7 @@
                 <div id="product-msg" style="font-size:12px"></div>
             </div>
         </div>
+    </form>
     </div>
 
     <!-- ── Filtros y búsqueda rápida ── -->
@@ -160,26 +161,23 @@
 
 <script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../../src/SidebarLoader.js"></script>
-<!-- Nodos -->
 <script src="../../src/Estructuras/Nodo.js"></script>
 <script src="../../src/Arboles/AVLNodo.js"></script>
 <script src="../../src/Arboles/BNodo.js"></script>
 <script src="../../src/Arboles/BMasNodo.js"></script>
 <script src="../../src/TablaHash/NodoHash.js"></script>
-<!-- Estructuras -->
-<script src="../../src/Estructuras/Productos.js"></script>
+<script src="../../src/Estructuras/Producto.js"></script>
 <script src="../../src/Estructuras/ListaProductos.js"></script>
 <script src="../../src/Estructuras/ListaProductosOrdenada.js"></script>
 <script src="../../src/Arboles/ArbolAVL.js"></script>
 <script src="../../src/Arboles/ArbolB.js"></script>
 <script src="../../src/Arboles/ArbolBMas.js"></script>
 <script src="../../src/TablaHash/TablaHash.js"></script>
-<!-- Lógica -->
-<script src="../../src/Logica/LectorCSV.js"></script>
 <script src="../../src/Logica/StackNodo.js"></script>
 <script src="../../src/Logica/Stack.js"></script>
 <script src="../../src/Logica/Catalogo.js"></script>
-<script src="../../src/main.js"></script>
+<script src="../../src/Storage.js"></script>
+<script src="../../src/Productos.js"></script>
 
 </body>
 </html>
