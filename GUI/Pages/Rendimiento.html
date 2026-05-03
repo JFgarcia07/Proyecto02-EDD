@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimiento — SuperMarket EDD</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+<div id="topbar">
+    <h5 class="topbar-title">Análisis de Rendimiento</h5>
+</div>
+
+<div id="main-content">
+
+    <div class="content-card">
+        <div class="card-header-title">Configuración del benchmark</div>
+        <div class="row g-3 align-items-end">
+            <div class="col-md-3">
+                <label class="form-label">Número de iteraciones</label>
+                <input type="number" class="form-control form-control-sm" id="bench-iteraciones" value="1000" min="100">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Término de búsqueda</label>
+                <select class="form-select form-select-sm" id="bench-producto">
+                    <option value="">Seleccionar producto...</option>
+                </select>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-danger w-100" onclick="ejecutarBenchmark()">
+                    ▶ Ejecutar benchmark
+                </button>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-outline-secondary w-100" onclick="limpiarResultados()">
+                    Limpiar resultados
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="seccion-resultados" style="display:none">
+
+        <div class="content-card">
+            <div class="card-header-title">Resultados — Búsqueda por nombre</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Compara Lista enlazada O(n) vs Árbol AVL O(log n) vs Tabla Hash O(1)
+            </p>
+            <div id="resultado-nombre"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">Resultados — Búsqueda por código de barras</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Compara Lista enlazada O(n) vs Tabla Hash O(1)
+            </p>
+            <div id="resultado-codigo"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">Resultados — Inserción</div>
+            <p class="text-muted mb-3" style="font-size:13px">
+                Compara inserción en Lista enlazada O(1) vs Árbol AVL O(log n) vs Tabla Hash O(1)
+            </p>
+            <div id="resultado-insercion"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">Resumen comparativo</div>
+            <table class="table custom-table mb-0">
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Estructura</th>
+                        <th>Complejidad</th>
+                        <th>Tiempo (ms)</th>
+                        <th>Más rápida</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-resumen">
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">
+                            Ejecuta el benchmark para ver resultados
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../src/SidebarLoader.js"></script>
+<script src="../../src/Storage.js"></script>
+
+<script src="../../src/Estructuras/Nodo.js"></script>
+<script src="../../src/Arboles/AVLNodo.js"></script>
+<script src="../../src/Arboles/BNodo.js"></script>
+<script src="../../src/Arboles/BMasNodo.js"></script>
+<script src="../../src/TablaHash/NodoHash.js"></script>
+<script src="../../src/Estructuras/Producto.js"></script>
+<script src="../../src/Estructuras/ListaProductos.js"></script>
+<script src="../../src/Estructuras/ListaProductosOrdenada.js"></script>
+<script src="../../src/Arboles/ArbolAVL.js"></script>
+<script src="../../src/Arboles/ArbolB.js"></script>
+<script src="../../src/Arboles/ArbolBMas.js"></script>
+<script src="../../src/TablaHash/TablaHash.js"></script>
+<script src="../../src/Logica/StackNodo.js"></script>
+<script src="../../src/Logica/Stack.js"></script>
+<script src="../../src/Logica/Catalogo.js"></script>
+
+<script src="../../src/Rendimiento.js"></script>
+
+</body>
+</html>

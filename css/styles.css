@@ -386,3 +386,35 @@ body {
     max-height: 200px;
     overflow-y: auto;
 }
+/* Simulación de colas */
+.sim-paso {
+    padding: 5px 10px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.sim-transito  { background: #eff6ff; border-left: 3px solid #3b82f6; }
+.sim-ingreso   { background: #f0fdf4; border-left: 3px solid #22c55e; }
+.sim-traspaso  { background: #fefce8; border-left: 3px solid #eab308; }
+.sim-salida    { background: #fff7ed; border-left: 3px solid #f97316; }
+.sim-destino   { background: #f0fdf4; border-left: 3px solid #16a34a; font-weight: 600; }
+.sim-badge {
+    background: #e5e7eb;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: auto;
+}
+.sim-eta {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #1e293b;
+    color: #f1f5f9;
+    border-radius: 6px;
+    font-size: 13px;
+    text-align: right;
+}

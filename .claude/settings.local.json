@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"/home/jfgarcianata/Documentos/EDD_PS_2026/Proyecto 2/ProyFase2EDD\" diff --name-only HEAD)",
+      "Bash(git -C \"/home/jfgarcianata/Documentos/EDD_PS_2026/Proyecto 2/ProyFase2EDD\" status --short)"
+    ]
+  }
+}

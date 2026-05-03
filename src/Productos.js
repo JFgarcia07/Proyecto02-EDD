@@ -45,6 +45,18 @@ function addProduct(){
     document.getElementById('p-branch').value = '';
 }
 
+function eliminarProducto(codigoBarras) {
+    const ok = catalogo?.removerProducto(codigoBarras);
+    if (!ok) {
+        mostrarMensajeProducto('No se encontró el producto.', 'danger');
+        return;
+    }
+    sincronizarProductos();
+    actualizarFiltrosCategorias();
+    filterProducts();
+    mostrarMensajeProducto('Producto eliminado correctamente.');
+}
+
 function undoProduct() {
     const op = catalogo?.deshacer();
     if (!op) {
@@ -177,7 +189,12 @@ function renderTablaProductos(productos) {
 function actualizarFiltrosCategorias() {
     const sel = document.getElementById('filter-category');
     if (!sel || !catalogo) return;
-    const cats        = [...new Set(catalogo.listarTodos().map(p => p.categoria).filter(Boolean))].sort();
+    const todasCats = catalogo.listarTodos().map(p => p.categoria).filter(Boolean);
+    const cats = [];
+    for (let i = 0; i < todasCats.length; i++) {
+        if (cats.indexOf(todasCats[i]) === -1) cats.push(todasCats[i]);
+    }
+    cats.sort();
     const valorActual = sel.value;
     sel.innerHTML     = '<option value="">Todas las categorías</option>';
     cats.forEach(c => sel.appendChild(new Option(c, c)));

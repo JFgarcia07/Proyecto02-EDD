@@ -55,7 +55,7 @@ class Grafo {
 
         const dist     = {};
         const prev     = {};
-        const visitado = new Set();
+        const visitado = {};
 
         ids.forEach(id => { dist[id] = Infinity; prev[id] = null; });
         dist[origenId] = 0;
@@ -66,8 +66,8 @@ class Grafo {
             cola.sort((a, b) => a.d - b.d);
             const { id: actual } = cola.shift();
 
-            if (visitado.has(actual)) continue;
-            visitado.add(actual);
+            if (visitado[actual]) continue;
+            visitado[actual] = true;
 
             if (actual === destinoId) break;
 
@@ -164,12 +164,12 @@ class Grafo {
             lineas.push(`    "${id}" [label="${this.sucursales[id].nombre}"];`);
         }
 
-        const yaAgregadas = new Set();
+        const yaAgregadas = {};
         for (const origenId in this.aristas) {
             for (const arista of this.aristas[origenId]) {
                 const clave = [origenId, arista.destino].sort().join('-');
-                if (arista.bidireccional && yaAgregadas.has(clave)) continue;
-                yaAgregadas.add(clave);
+                if (arista.bidireccional && yaAgregadas[clave]) continue;
+                yaAgregadas[clave] = true;
                 const dir   = arista.bidireccional ? ' dir=both' : '';
                 const label = `t:${arista.tiempo}s c:Q${arista.costo}`;
                 lineas.push(`    "${origenId}" -> "${arista.destino}" [label="${label}"${dir}];`);

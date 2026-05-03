@@ -63,7 +63,9 @@
     <div class="content-card" id="route-result" style="display:none">
         <div class="card-header-title">Ruta calculada</div>
         <div id="route-path" class="mb-3"></div>
-        <div id="route-detail" class="text-muted" style="font-size:13px"></div>
+        <div id="route-detail" class="text-muted mb-3" style="font-size:13px"></div>
+        <div class="card-header-title" style="font-size:13px; margin-bottom:8px">Simulación de flujo por colas</div>
+        <div id="simulacion-pasos"></div>
     </div>
 
     <div class="content-card">
@@ -84,12 +86,13 @@
                         <th>Destino</th>
                         <th>Criterio</th>
                         <th>Estado</th>
+                        <th>ETA</th>
                         <th>Hora</th>
                     </tr>
                 </thead>
                 <tbody id="activity-log">
                     <tr>
-                        <td colspan="6" class="text-center text-muted py-4">Sin transferencias aún</td>
+                        <td colspan="7" class="text-center text-muted py-4">Sin transferencias aún</td>
                     </tr>
                 </tbody>
             </table>

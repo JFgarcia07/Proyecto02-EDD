@@ -42,3 +42,12 @@ function getHistorialGuardado() {
 function guardarHistorial(lista) {
     sessionStorage.setItem('historial', JSON.stringify(lista));
 }
+
+function getColasGuardadas() {
+    try { return JSON.parse(sessionStorage.getItem('colas') || '{}'); }
+    catch { return {}; }
+}
+
+function guardarColas(data) {
+    sessionStorage.setItem('colas', JSON.stringify(data));
+}

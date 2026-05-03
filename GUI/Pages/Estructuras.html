@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras — SuperMarket EDD</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+<div id="topbar">
+    <h5 class="topbar-title">Visualización de Estructuras</h5>
+</div>
+
+<div id="main-content">
+
+    <div class="content-card">
+        <div class="card-header-title">Seleccionar sucursal</div>
+        <div class="row g-2 align-items-center">
+            <div class="col-md-4">
+                <select class="form-select form-select-sm" id="select-sucursal"
+                        onchange="cargarSucursal()">
+                    <option value="">Seleccionar sucursal...</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-sm btn-danger" onclick="descargarTodo()">
+                    ⬇ Descargar todo (.dot + .png)
+                </button>
+            </div>
+            <div class="col" id="sucursal-info" style="font-size:12px; color:#6b7280"></div>
+        </div>
+    </div>
+
+    <div id="seccion-estructuras" style="display:none">
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <div class="content-card">
+                    <div class="card-header-title">
+                        Árbol AVL — por nombre
+                        <div class="float-end">
+                            <button class="btn btn-sm btn-outline-secondary me-1"
+                                    onclick="descargarDot('avl')">⬇ .dot</button>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    onclick="descargarPng('avl')">⬇ .png</button>
+                        </div>
+                    </div>
+                    <div id="viz-avl" style="overflow:auto; min-height:200px"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card">
+                    <div class="card-header-title">
+                        Árbol B — por fecha
+                        <div class="float-end">
+                            <button class="btn btn-sm btn-outline-secondary me-1"
+                                    onclick="descargarDot('b')">⬇ .dot</button>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    onclick="descargarPng('b')">⬇ .png</button>
+                        </div>
+                    </div>
+                    <div id="viz-b" style="overflow:auto; min-height:200px"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card">
+                    <div class="card-header-title">
+                        Árbol B+ — por categoría
+                        <div class="float-end">
+                            <button class="btn btn-sm btn-outline-secondary me-1"
+                                    onclick="descargarDot('bmas')">⬇ .dot</button>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    onclick="descargarPng('bmas')">⬇ .png</button>
+                        </div>
+                    </div>
+                    <div id="viz-bmas" style="overflow:auto; min-height:200px"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card">
+                    <div class="card-header-title">Tabla Hash — distribución</div>
+                    <canvas id="canvas-hash" class="viz-canvas"></canvas>
+                    <div id="hash-stats" class="mt-2" style="font-size:12px; color:#6b7280"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card mb-3">
+            <div class="card-header-title">
+                Red de sucursales — Grafo ponderado
+                <div class="float-end">
+                    <button class="btn btn-sm btn-outline-secondary me-1"
+                            onclick="descargarDot('grafo')">⬇ .dot</button>
+                    <button class="btn btn-sm btn-outline-primary"
+                            onclick="descargarPng('grafo')">⬇ .png</button>
+                </div>
+            </div>
+            <div id="viz-grafo" style="overflow:auto; min-height:200px"></div>
+        </div>
+
+        <div class="content-card">
+            <div class="card-header-title">Estado de colas de despacho</div>
+            <div id="colas-vis">
+                <p class="text-muted" style="font-size:13px">Sin datos</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../../Bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.8.2/viz.js"></script>
+<script src="../../src/SidebarLoader.js"></script>
+<script src="../../src/Storage.js"></script>
+
+<script src="../../src/Estructuras/Nodo.js"></script>
+<script src="../../src/Arboles/AVLNodo.js"></script>
+<script src="../../src/Arboles/BNodo.js"></script>
+<script src="../../src/Arboles/BMasNodo.js"></script>
+<script src="../../src/TablaHash/NodoHash.js"></script>
+<script src="../../src/Estructuras/Producto.js"></script>
+<script src="../../src/Estructuras/ListaProductos.js"></script>
+<script src="../../src/Estructuras/ListaProductosOrdenada.js"></script>
+<script src="../../src/Arboles/ArbolAVL.js"></script>
+<script src="../../src/Arboles/ArbolB.js"></script>
+<script src="../../src/Arboles/ArbolBMas.js"></script>
+<script src="../../src/TablaHash/TablaHash.js"></script>
+<script src="../../src/Logica/StackNodo.js"></script>
+<script src="../../src/Logica/Stack.js"></script>
+<script src="../../src/Logica/Catalogo.js"></script>
+
+<script src="../../src/Estructuras.js"></script>
+
+</body>
+</html>
