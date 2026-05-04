@@ -11,86 +11,54 @@
 
 <div id="sidebar-container"></div>
 
-<!-- Topbar -->
 <div id="topbar">
     <h5 class="topbar-title">Dashboard</h5>
     <div class="topbar-actions">
         <span class="text-muted" style="font-size:12px" id="topbar-clock"></span>
-        <a href="CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
+        <a href="/GUI/Pages/CSV.html" class="btn btn-sm btn-outline-danger">+ Cargar CSV</a>
     </div>
 </div>
 
 <!-- Contenido -->
-<div id="main-content">
+<div id="main-content" class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 70px);">
 
-    <!-- Stats -->
-    <div class="row g-3 mb-4">
-        <div class="col-md-3">
-            <div class="stat-card d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="stat-label">Productos totales</div>
-                    <div class="stat-value" id="stat-products">0</div>
-                    <div class="stat-sub">en todas las sucursales</div>
-                </div>
-                <div class="stat-icon" style="background:#eff6ff">📦</div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="stat-card d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="stat-label">Sucursales</div>
-                    <div class="stat-value" id="stat-branches">0</div>
-                    <div class="stat-sub">conectadas en red</div>
-                </div>
-                <div class="stat-icon" style="background:#f0fdf4">🏪</div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="stat-card d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="stat-label">En tránsito</div>
-                    <div class="stat-value" id="stat-transit">0</div>
-                    <div class="stat-sub">productos moviéndose</div>
-                </div>
-                <div class="stat-icon" style="background:#fffbeb">🚚</div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="stat-card d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="stat-label">Transferencias</div>
-                    <div class="stat-value" id="stat-transfers">0</div>
-                    <div class="stat-sub">realizadas hoy</div>
-                </div>
-                <div class="stat-icon" style="background:#fdf4ff">🔄</div>
-            </div>
-        </div>
-    </div>
+    <div class="text-center" style="max-width: 800px;">
+        <h1 style="font-size: 3rem; font-weight: 700; color: #1e3a8a; letter-spacing: 1px;">
+            Catálogo de Supermercado
+        </h1>
 
-    <!-- Actividad reciente -->
-    <div class="content-card">
-        <div class="card-header-title">Actividad reciente</div>
-        <table class="table custom-table mb-0">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Origen</th>
-                    <th>Destino</th>
-                    <th>Criterio</th>
-                    <th>Estado</th>
-                    <th>Hora</th>
-                </tr>
-            </thead>
-            <tbody id="activity-log">
-                <tr>
-                    <td colspan="6" class="text-center text-muted py-4">Sin actividad aún</td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="width: 60px; height: 4px; background: #3b82f6; margin: 20px auto; border-radius: 2px;"></div>
+
+        <p class="text-muted" style="font-size: 1.2rem;">
+            Estructura de Datos
+        </p>
+
+        <p style="margin-top: 25px; font-size: 1rem; color: #374151; line-height: 1.6;">
+            El Sistema de Gestión de Catálogo de Productos de Supermercado es una aplicación web 
+            que permite gestionar el inventario de productos distribuidos en múltiples sucursales 
+            interconectadas. El sistema integra diversas estructuras de datos implementadas desde cero.
+        </p>
+
+        <div style="text-align: left; margin-top: 30px;">
+            <h5 style="font-weight: 600; color: #111827;">Flujo de uso recomendado</h5>
+            <p class="text-muted" style="margin-bottom: 10px;">
+                El orden correcto para utilizar el sistema es el siguiente:
+            </p>
+
+            <ol style="color: #374151; line-height: 1.6;">
+                <li><strong>Cargar CSV de sucursales</strong> — sin sucursales no se pueden agregar productos.</li>
+                <li><strong>Cargar CSV de conexiones</strong> — define las rutas entre sucursales para Dijkstra.</li>
+                <li><strong>Cargar CSV de productos</strong> — mínimo 1000 productos según el proyecto.</li>
+                <li><strong>Gestionar productos</strong> — agregar, buscar, eliminar y hacer rollback.</li>
+                <li><strong>Transferir productos</strong> — el sistema calcula la ruta óptima con Dijkstra.</li>
+                <li><strong>Visualizar estructuras</strong> — ver árboles, hash y grafo, descargar .dot y .png.</li>
+                <li><strong>Analizar rendimiento</strong> — ejecutar benchmark y comparar estructuras.</li>
+            </ol>
+        </div>
+
     </div>
 
 </div>
-
 
 <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../src/SidebarLoader.js"></script>

@@ -1,0 +1,102 @@
+Log de errores — 3/5/2026, 5:13:12 p. m.
+==================================================
+Línea 402: formato incorrecto
+Línea 403: formato incorrecto
+Línea 404: formato incorrecto
+Línea 405: formato incorrecto
+Línea 406: formato incorrecto
+Línea 407: formato incorrecto
+Línea 408: formato incorrecto
+Línea 409: formato incorrecto
+Línea 410: formato incorrecto
+Línea 411: formato incorrecto
+Línea 412: formato incorrecto
+Línea 413: formato incorrecto
+Línea 414: formato incorrecto
+Línea 415: formato incorrecto
+Línea 416: formato incorrecto
+Línea 417: formato incorrecto
+Línea 418: formato incorrecto
+Línea 419: formato incorrecto
+Línea 420: formato incorrecto
+Línea 421: formato incorrecto
+Línea 422: formato incorrecto
+Línea 423: formato incorrecto
+Línea 424: formato incorrecto
+Línea 425: formato incorrecto
+Línea 426: formato incorrecto
+Línea 427: formato incorrecto
+Línea 428: formato incorrecto
+Línea 429: formato incorrecto
+Línea 430: formato incorrecto
+Línea 431: formato incorrecto
+Línea 432: formato incorrecto
+Línea 433: formato incorrecto
+Línea 434: formato incorrecto
+Línea 435: formato incorrecto
+Línea 436: formato incorrecto
+Línea 437: formato incorrecto
+Línea 438: formato incorrecto
+Línea 439: formato incorrecto
+Línea 440: formato incorrecto
+Línea 441: formato incorrecto
+Línea 442: formato incorrecto
+Línea 443: formato incorrecto
+Línea 444: formato incorrecto
+Línea 445: formato incorrecto
+Línea 446: formato incorrecto
+Línea 447: formato incorrecto
+Línea 448: formato incorrecto
+Línea 449: formato incorrecto
+Línea 450: formato incorrecto
+Línea 451: formato incorrecto
+Línea 452: ID duplicado 'S001'
+Línea 453: ID duplicado 'S002'
+Línea 454: ID duplicado 'S003'
+Línea 455: ID duplicado 'S004'
+Línea 456: ID duplicado 'S005'
+Línea 457: ID duplicado 'S006'
+Línea 458: ID duplicado 'S007'
+Línea 459: ID duplicado 'S008'
+Línea 460: ID duplicado 'S009'
+Línea 461: ID duplicado 'S010'
+Línea 462: ID duplicado 'S011'
+Línea 463: ID duplicado 'S012'
+Línea 464: ID duplicado 'S013'
+Línea 465: ID duplicado 'S014'
+Línea 466: ID duplicado 'S015'
+Línea 467: ID duplicado 'S016'
+Línea 468: ID duplicado 'S017'
+Línea 469: ID duplicado 'S018'
+Línea 470: ID duplicado 'S019'
+Línea 471: ID duplicado 'S020'
+Línea 472: ID duplicado 'S021'
+Línea 473: ID duplicado 'S022'
+Línea 474: ID duplicado 'S023'
+Línea 475: ID duplicado 'S024'
+Línea 476: ID duplicado 'S025'
+Línea 477: ID duplicado 'S026'
+Línea 478: ID duplicado 'S027'
+Línea 479: ID duplicado 'S028'
+Línea 480: ID duplicado 'S029'
+Línea 481: ID duplicado 'S030'
+Línea 482: ID duplicado 'S031'
+Línea 483: ID duplicado 'S032'
+Línea 484: ID duplicado 'S033'
+Línea 485: ID duplicado 'S034'
+Línea 486: ID duplicado 'S035'
+Línea 487: ID duplicado 'S036'
+Línea 488: ID duplicado 'S037'
+Línea 489: ID duplicado 'S038'
+Línea 490: ID duplicado 'S039'
+Línea 491: ID duplicado 'S040'
+Línea 492: ID duplicado 'S041'
+Línea 493: ID duplicado 'S042'
+Línea 494: ID duplicado 'S043'
+Línea 495: ID duplicado 'S044'
+Línea 496: ID duplicado 'S045'
+Línea 497: ID duplicado 'S046'
+Línea 498: ID duplicado 'S047'
+Línea 499: ID duplicado 'S048'
+Línea 500: ID duplicado 'S049'
+Línea 501: ID duplicado 'S050'

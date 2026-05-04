@@ -31,6 +31,11 @@ function addProduct(){
         return;
     }
 
+    if (codigoBarras.length !== 10) {
+        mostrarMensajeProducto('El código de barras debe tener exactamente 10 caracteres.', 'danger');
+        return;
+    }
+
     const p = new Producto(nombre, codigoBarras, categoria, fechaExpiracion, marca, precio, stock);
     p.sucursalId = sucursalId;
     catalogo.agregarProducto(p);

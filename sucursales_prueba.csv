@@ -1,0 +1,501 @@
+ID,Nombre,Ubicacion,t_ingreso,t_traspaso,t_despacho
+S001,Sucursal Sur 1,Zona 2 Mixco,9,5,2
+S002,Sucursal Este 2,Zona 3 Villa Nueva,4,3,4
+S003,Sucursal Oeste 3,Zona 4 San Juan Sacatepequez,3,1,3
+S004,Sucursal Central 4,Zona 5 Amatitlan,5,1,3
+S005,Sucursal Principal 5,Zona 6 Quetzaltenango,3,5,3
+S006,Sucursal Express 6,Zona 7 Coban,3,1,1
+S007,Sucursal Plus 7,Zona 8 Escuintla,8,6,2
+S008,Sucursal Max 8,Zona 10 Antigua Guatemala,3,4,1
+S009,Sucursal Norte 9,Zona 11 Chiquimula,7,5,2
+S010,Sucursal Sur 10,Zona 12 Guatemala,4,4,3
+S011,Sucursal Este 11,Zona 13 Mixco,6,3,2
+S012,Sucursal Oeste 12,Zona 14 Villa Nueva,5,2,3
+S013,Sucursal Central 13,Zona 15 San Juan Sacatepequez,2,4,3
+S014,Sucursal Principal 14,Zona 16 Amatitlan,6,2,3
+S015,Sucursal Express 15,Zona 18 Quetzaltenango,5,5,3
+S016,Sucursal Plus 16,Zona 1 Coban,8,3,4
+S017,Sucursal Max 17,Zona 2 Escuintla,5,5,1
+S018,Sucursal Norte 18,Zona 3 Antigua Guatemala,6,3,4
+S019,Sucursal Sur 19,Zona 4 Chiquimula,6,3,3
+S020,Sucursal Este 20,Zona 5 Guatemala,9,4,3
+S021,Sucursal Oeste 21,Zona 6 Mixco,7,5,2
+S022,Sucursal Central 22,Zona 7 Villa Nueva,3,5,2
+S023,Sucursal Principal 23,Zona 8 San Juan Sacatepequez,7,2,4
+S024,Sucursal Express 24,Zona 10 Amatitlan,5,2,1
+S025,Sucursal Plus 25,Zona 11 Quetzaltenango,5,2,1
+S026,Sucursal Max 26,Zona 12 Coban,4,1,3
+S027,Sucursal Norte 27,Zona 13 Escuintla,4,2,1
+S028,Sucursal Sur 28,Zona 14 Antigua Guatemala,6,1,3
+S029,Sucursal Este 29,Zona 15 Chiquimula,2,4,4
+S030,Sucursal Oeste 30,Zona 16 Guatemala,7,3,1
+S031,Sucursal Central 31,Zona 18 Mixco,9,1,3
+S032,Sucursal Principal 32,Zona 1 Villa Nueva,9,1,4
+S033,Sucursal Express 33,Zona 2 San Juan Sacatepequez,2,6,2
+S034,Sucursal Plus 34,Zona 3 Amatitlan,5,1,1
+S035,Sucursal Max 35,Zona 4 Quetzaltenango,3,5,3
+S036,Sucursal Norte 36,Zona 5 Coban,6,6,2
+S037,Sucursal Sur 37,Zona 6 Escuintla,5,4,1
+S038,Sucursal Este 38,Zona 7 Antigua Guatemala,3,3,2
+S039,Sucursal Oeste 39,Zona 8 Chiquimula,8,1,2
+S040,Sucursal Central 40,Zona 10 Guatemala,4,6,3
+S041,Sucursal Principal 41,Zona 11 Mixco,5,6,2
+S042,Sucursal Express 42,Zona 12 Villa Nueva,4,3,4
+S043,Sucursal Plus 43,Zona 13 San Juan Sacatepequez,6,5,3
+S044,Sucursal Max 44,Zona 14 Amatitlan,3,1,1
+S045,Sucursal Norte 45,Zona 15 Quetzaltenango,5,3,1
+S046,Sucursal Sur 46,Zona 16 Coban,6,6,2
+S047,Sucursal Este 47,Zona 18 Escuintla,9,4,3
+S048,Sucursal Oeste 48,Zona 1 Antigua Guatemala,8,3,2
+S049,Sucursal Central 49,Zona 2 Chiquimula,5,4,2
+S050,Sucursal Principal 50,Zona 3 Guatemala,6,6,1
+S051,Sucursal Express 51,Zona 4 Mixco,2,2,1
+S052,Sucursal Plus 52,Zona 5 Villa Nueva,8,5,4
+S053,Sucursal Max 53,Zona 6 San Juan Sacatepequez,5,5,2
+S054,Sucursal Norte 54,Zona 7 Amatitlan,8,2,1
+S055,Sucursal Sur 55,Zona 8 Quetzaltenango,8,6,3
+S056,Sucursal Este 56,Zona 10 Coban,5,5,4
+S057,Sucursal Oeste 57,Zona 11 Escuintla,6,3,3
+S058,Sucursal Central 58,Zona 12 Antigua Guatemala,8,4,3
+S059,Sucursal Principal 59,Zona 13 Chiquimula,8,3,1
+S060,Sucursal Express 60,Zona 14 Guatemala,6,3,1
+S061,Sucursal Plus 61,Zona 15 Mixco,2,6,2
+S062,Sucursal Max 62,Zona 16 Villa Nueva,8,4,2
+S063,Sucursal Norte 63,Zona 18 San Juan Sacatepequez,9,1,3
+S064,Sucursal Sur 64,Zona 1 Amatitlan,3,4,1
+S065,Sucursal Este 65,Zona 2 Quetzaltenango,2,3,3
+S066,Sucursal Oeste 66,Zona 3 Coban,5,3,3
+S067,Sucursal Central 67,Zona 4 Escuintla,4,1,2
+S068,Sucursal Principal 68,Zona 5 Antigua Guatemala,8,4,3
+S069,Sucursal Express 69,Zona 6 Chiquimula,5,1,1
+S070,Sucursal Plus 70,Zona 7 Guatemala,4,6,2
+S071,Sucursal Max 71,Zona 8 Mixco,4,1,3
+S072,Sucursal Norte 72,Zona 10 Villa Nueva,6,3,2
+S073,Sucursal Sur 73,Zona 11 San Juan Sacatepequez,7,3,4
+S074,Sucursal Este 74,Zona 12 Amatitlan,9,3,3
+S075,Sucursal Oeste 75,Zona 13 Quetzaltenango,4,1,1
+S076,Sucursal Central 76,Zona 14 Coban,9,4,3
+S077,Sucursal Principal 77,Zona 15 Escuintla,2,6,4
+S078,Sucursal Express 78,Zona 16 Antigua Guatemala,4,6,4
+S079,Sucursal Plus 79,Zona 18 Chiquimula,4,2,2
+S080,Sucursal Max 80,Zona 1 Guatemala,7,4,2
+S081,Sucursal Norte 81,Zona 2 Mixco,7,5,3
+S082,Sucursal Sur 82,Zona 3 Villa Nueva,7,3,1
+S083,Sucursal Este 83,Zona 4 San Juan Sacatepequez,2,3,4
+S084,Sucursal Oeste 84,Zona 5 Amatitlan,7,4,4
+S085,Sucursal Central 85,Zona 6 Quetzaltenango,8,2,3
+S086,Sucursal Principal 86,Zona 7 Coban,9,3,1
+S087,Sucursal Express 87,Zona 8 Escuintla,9,2,4
+S088,Sucursal Plus 88,Zona 10 Antigua Guatemala,4,1,3
+S089,Sucursal Max 89,Zona 11 Chiquimula,4,5,4
+S090,Sucursal Norte 90,Zona 12 Guatemala,4,2,2
+S091,Sucursal Sur 91,Zona 13 Mixco,8,4,2
+S092,Sucursal Este 92,Zona 14 Villa Nueva,7,2,1
+S093,Sucursal Oeste 93,Zona 15 San Juan Sacatepequez,6,4,3
+S094,Sucursal Central 94,Zona 16 Amatitlan,2,5,4
+S095,Sucursal Principal 95,Zona 18 Quetzaltenango,9,6,1
+S096,Sucursal Express 96,Zona 1 Coban,4,2,2
+S097,Sucursal Plus 97,Zona 2 Escuintla,3,4,2
+S098,Sucursal Max 98,Zona 3 Antigua Guatemala,5,4,1
+S099,Sucursal Norte 99,Zona 4 Chiquimula,4,3,2
+S100,Sucursal Sur 100,Zona 5 Guatemala,5,3,1
+S101,Sucursal Este 101,Zona 6 Mixco,4,2,2
+S102,Sucursal Oeste 102,Zona 7 Villa Nueva,9,1,2
+S103,Sucursal Central 103,Zona 8 San Juan Sacatepequez,7,2,4
+S104,Sucursal Principal 104,Zona 10 Amatitlan,2,1,4
+S105,Sucursal Express 105,Zona 11 Quetzaltenango,9,2,3
+S106,Sucursal Plus 106,Zona 12 Coban,9,3,2
+S107,Sucursal Max 107,Zona 13 Escuintla,2,3,2
+S108,Sucursal Norte 108,Zona 14 Antigua Guatemala,3,3,4
+S109,Sucursal Sur 109,Zona 15 Chiquimula,4,4,4
+S110,Sucursal Este 110,Zona 16 Guatemala,8,2,4
+S111,Sucursal Oeste 111,Zona 18 Mixco,8,4,4
+S112,Sucursal Central 112,Zona 1 Villa Nueva,4,1,1
+S113,Sucursal Principal 113,Zona 2 San Juan Sacatepequez,5,2,3
+S114,Sucursal Express 114,Zona 3 Amatitlan,6,2,1
+S115,Sucursal Plus 115,Zona 4 Quetzaltenango,6,3,4
+S116,Sucursal Max 116,Zona 5 Coban,7,1,1
+S117,Sucursal Norte 117,Zona 6 Escuintla,3,5,3
+S118,Sucursal Sur 118,Zona 7 Antigua Guatemala,9,1,2
+S119,Sucursal Este 119,Zona 8 Chiquimula,4,6,3
+S120,Sucursal Oeste 120,Zona 10 Guatemala,8,6,1
+S121,Sucursal Central 121,Zona 11 Mixco,6,5,2
+S122,Sucursal Principal 122,Zona 12 Villa Nueva,9,5,1
+S123,Sucursal Express 123,Zona 13 San Juan Sacatepequez,8,2,2
+S124,Sucursal Plus 124,Zona 14 Amatitlan,2,5,3
+S125,Sucursal Max 125,Zona 15 Quetzaltenango,9,6,4
+S126,Sucursal Norte 126,Zona 16 Coban,3,1,3
+S127,Sucursal Sur 127,Zona 18 Escuintla,5,2,1
+S128,Sucursal Este 128,Zona 1 Antigua Guatemala,5,4,4
+S129,Sucursal Oeste 129,Zona 2 Chiquimula,2,1,2
+S130,Sucursal Central 130,Zona 3 Guatemala,4,2,2
+S131,Sucursal Principal 131,Zona 4 Mixco,5,1,1
+S132,Sucursal Express 132,Zona 5 Villa Nueva,2,5,4
+S133,Sucursal Plus 133,Zona 6 San Juan Sacatepequez,4,5,3
+S134,Sucursal Max 134,Zona 7 Amatitlan,8,2,3
+S135,Sucursal Norte 135,Zona 8 Quetzaltenango,4,1,4
+S136,Sucursal Sur 136,Zona 10 Coban,6,2,2
+S137,Sucursal Este 137,Zona 11 Escuintla,4,5,3
+S138,Sucursal Oeste 138,Zona 12 Antigua Guatemala,8,1,3
+S139,Sucursal Central 139,Zona 13 Chiquimula,3,1,2
+S140,Sucursal Principal 140,Zona 14 Guatemala,7,4,2
+S141,Sucursal Express 141,Zona 15 Mixco,7,2,4
+S142,Sucursal Plus 142,Zona 16 Villa Nueva,5,6,1
+S143,Sucursal Max 143,Zona 18 San Juan Sacatepequez,5,3,2
+S144,Sucursal Norte 144,Zona 1 Amatitlan,4,4,4
+S145,Sucursal Sur 145,Zona 2 Quetzaltenango,9,4,1
+S146,Sucursal Este 146,Zona 3 Coban,2,2,2
+S147,Sucursal Oeste 147,Zona 4 Escuintla,4,4,1
+S148,Sucursal Central 148,Zona 5 Antigua Guatemala,6,5,4
+S149,Sucursal Principal 149,Zona 6 Chiquimula,7,1,3
+S150,Sucursal Express 150,Zona 7 Guatemala,7,5,3
+S151,Sucursal Plus 151,Zona 8 Mixco,6,1,1
+S152,Sucursal Max 152,Zona 10 Villa Nueva,3,6,2
+S153,Sucursal Norte 153,Zona 11 San Juan Sacatepequez,7,5,4
+S154,Sucursal Sur 154,Zona 12 Amatitlan,5,3,1
+S155,Sucursal Este 155,Zona 13 Quetzaltenango,8,3,1
+S156,Sucursal Oeste 156,Zona 14 Coban,7,2,2
+S157,Sucursal Central 157,Zona 15 Escuintla,7,2,4
+S158,Sucursal Principal 158,Zona 16 Antigua Guatemala,6,2,1
+S159,Sucursal Express 159,Zona 18 Chiquimula,5,4,3
+S160,Sucursal Plus 160,Zona 1 Guatemala,4,6,3
+S161,Sucursal Max 161,Zona 2 Mixco,9,3,4
+S162,Sucursal Norte 162,Zona 3 Villa Nueva,5,5,1
+S163,Sucursal Sur 163,Zona 4 San Juan Sacatepequez,2,4,3
+S164,Sucursal Este 164,Zona 5 Amatitlan,2,1,1
+S165,Sucursal Oeste 165,Zona 6 Quetzaltenango,5,4,2
+S166,Sucursal Central 166,Zona 7 Coban,6,4,2
+S167,Sucursal Principal 167,Zona 8 Escuintla,4,4,4
+S168,Sucursal Express 168,Zona 10 Antigua Guatemala,3,4,1
+S169,Sucursal Plus 169,Zona 11 Chiquimula,2,4,1
+S170,Sucursal Max 170,Zona 12 Guatemala,7,5,1
+S171,Sucursal Norte 171,Zona 13 Mixco,9,3,3
+S172,Sucursal Sur 172,Zona 14 Villa Nueva,7,5,4
+S173,Sucursal Este 173,Zona 15 San Juan Sacatepequez,3,4,4
+S174,Sucursal Oeste 174,Zona 16 Amatitlan,2,3,4
+S175,Sucursal Central 175,Zona 18 Quetzaltenango,6,3,3
+S176,Sucursal Principal 176,Zona 1 Coban,6,3,3
+S177,Sucursal Express 177,Zona 2 Escuintla,9,4,4
+S178,Sucursal Plus 178,Zona 3 Antigua Guatemala,2,6,2
+S179,Sucursal Max 179,Zona 4 Chiquimula,5,4,3
+S180,Sucursal Norte 180,Zona 5 Guatemala,9,4,2
+S181,Sucursal Sur 181,Zona 6 Mixco,4,4,1
+S182,Sucursal Este 182,Zona 7 Villa Nueva,4,6,2
+S183,Sucursal Oeste 183,Zona 8 San Juan Sacatepequez,8,5,3
+S184,Sucursal Central 184,Zona 10 Amatitlan,4,6,1
+S185,Sucursal Principal 185,Zona 11 Quetzaltenango,5,6,4
+S186,Sucursal Express 186,Zona 12 Coban,7,3,4
+S187,Sucursal Plus 187,Zona 13 Escuintla,5,5,2
+S188,Sucursal Max 188,Zona 14 Antigua Guatemala,4,2,1
+S189,Sucursal Norte 189,Zona 15 Chiquimula,4,3,4
+S190,Sucursal Sur 190,Zona 16 Guatemala,5,5,1
+S191,Sucursal Este 191,Zona 18 Mixco,8,5,1
+S192,Sucursal Oeste 192,Zona 1 Villa Nueva,8,1,4
+S193,Sucursal Central 193,Zona 2 San Juan Sacatepequez,5,5,1
+S194,Sucursal Principal 194,Zona 3 Amatitlan,4,2,4
+S195,Sucursal Express 195,Zona 4 Quetzaltenango,9,4,3
+S196,Sucursal Plus 196,Zona 5 Coban,4,5,3
+S197,Sucursal Max 197,Zona 6 Escuintla,4,3,1
+S198,Sucursal Norte 198,Zona 7 Antigua Guatemala,3,6,2
+S199,Sucursal Sur 199,Zona 8 Chiquimula,3,1,2
+S200,Sucursal Este 200,Zona 10 Guatemala,6,4,1
+S201,Sucursal Oeste 201,Zona 11 Mixco,6,4,4
+S202,Sucursal Central 202,Zona 12 Villa Nueva,6,5,4
+S203,Sucursal Principal 203,Zona 13 San Juan Sacatepequez,3,2,1
+S204,Sucursal Express 204,Zona 14 Amatitlan,7,2,4
+S205,Sucursal Plus 205,Zona 15 Quetzaltenango,9,2,2
+S206,Sucursal Max 206,Zona 16 Coban,6,1,4
+S207,Sucursal Norte 207,Zona 18 Escuintla,8,4,1
+S208,Sucursal Sur 208,Zona 1 Antigua Guatemala,2,6,4
+S209,Sucursal Este 209,Zona 2 Chiquimula,9,4,2
+S210,Sucursal Oeste 210,Zona 3 Guatemala,4,3,2
+S211,Sucursal Central 211,Zona 4 Mixco,4,5,3
+S212,Sucursal Principal 212,Zona 5 Villa Nueva,7,6,4
+S213,Sucursal Express 213,Zona 6 San Juan Sacatepequez,6,2,2
+S214,Sucursal Plus 214,Zona 7 Amatitlan,5,1,3
+S215,Sucursal Max 215,Zona 8 Quetzaltenango,3,6,1
+S216,Sucursal Norte 216,Zona 10 Coban,7,5,2
+S217,Sucursal Sur 217,Zona 11 Escuintla,6,2,1
+S218,Sucursal Este 218,Zona 12 Antigua Guatemala,8,6,4
+S219,Sucursal Oeste 219,Zona 13 Chiquimula,2,6,2
+S220,Sucursal Central 220,Zona 14 Guatemala,3,1,3
+S221,Sucursal Principal 221,Zona 15 Mixco,6,5,1
+S222,Sucursal Express 222,Zona 16 Villa Nueva,7,3,4
+S223,Sucursal Plus 223,Zona 18 San Juan Sacatepequez,8,4,3
+S224,Sucursal Max 224,Zona 1 Amatitlan,4,2,2
+S225,Sucursal Norte 225,Zona 2 Quetzaltenango,4,2,4
+S226,Sucursal Sur 226,Zona 3 Coban,3,2,3
+S227,Sucursal Este 227,Zona 4 Escuintla,6,5,4
+S228,Sucursal Oeste 228,Zona 5 Antigua Guatemala,4,5,3
+S229,Sucursal Central 229,Zona 6 Chiquimula,9,5,1
+S230,Sucursal Principal 230,Zona 7 Guatemala,3,2,4
+S231,Sucursal Express 231,Zona 8 Mixco,4,5,1
+S232,Sucursal Plus 232,Zona 10 Villa Nueva,9,3,4
+S233,Sucursal Max 233,Zona 11 San Juan Sacatepequez,9,6,4
+S234,Sucursal Norte 234,Zona 12 Amatitlan,5,6,2
+S235,Sucursal Sur 235,Zona 13 Quetzaltenango,9,5,1
+S236,Sucursal Este 236,Zona 14 Coban,6,5,1
+S237,Sucursal Oeste 237,Zona 15 Escuintla,2,4,1
+S238,Sucursal Central 238,Zona 16 Antigua Guatemala,5,2,4
+S239,Sucursal Principal 239,Zona 18 Chiquimula,4,3,1
+S240,Sucursal Express 240,Zona 1 Guatemala,4,5,2
+S241,Sucursal Plus 241,Zona 2 Mixco,8,5,2
+S242,Sucursal Max 242,Zona 3 Villa Nueva,9,4,1
+S243,Sucursal Norte 243,Zona 4 San Juan Sacatepequez,3,1,2
+S244,Sucursal Sur 244,Zona 5 Amatitlan,9,6,1
+S245,Sucursal Este 245,Zona 6 Quetzaltenango,8,4,2
+S246,Sucursal Oeste 246,Zona 7 Coban,4,5,4
+S247,Sucursal Central 247,Zona 8 Escuintla,6,1,4
+S248,Sucursal Principal 248,Zona 10 Antigua Guatemala,6,6,4
+S249,Sucursal Express 249,Zona 11 Chiquimula,4,6,4
+S250,Sucursal Plus 250,Zona 12 Guatemala,3,1,3
+S251,Sucursal Max 251,Zona 13 Mixco,2,4,3
+S252,Sucursal Norte 252,Zona 14 Villa Nueva,2,1,3
+S253,Sucursal Sur 253,Zona 15 San Juan Sacatepequez,2,6,4
+S254,Sucursal Este 254,Zona 16 Amatitlan,3,4,2
+S255,Sucursal Oeste 255,Zona 18 Quetzaltenango,9,2,2
+S256,Sucursal Central 256,Zona 1 Coban,7,1,3
+S257,Sucursal Principal 257,Zona 2 Escuintla,7,2,4
+S258,Sucursal Express 258,Zona 3 Antigua Guatemala,2,5,3
+S259,Sucursal Plus 259,Zona 4 Chiquimula,5,3,4
+S260,Sucursal Max 260,Zona 5 Guatemala,6,5,4
+S261,Sucursal Norte 261,Zona 6 Mixco,9,6,3
+S262,Sucursal Sur 262,Zona 7 Villa Nueva,7,6,4
+S263,Sucursal Este 263,Zona 8 San Juan Sacatepequez,9,3,4
+S264,Sucursal Oeste 264,Zona 10 Amatitlan,8,6,3
+S265,Sucursal Central 265,Zona 11 Quetzaltenango,3,1,1
+S266,Sucursal Principal 266,Zona 12 Coban,9,5,1
+S267,Sucursal Express 267,Zona 13 Escuintla,5,6,1
+S268,Sucursal Plus 268,Zona 14 Antigua Guatemala,8,2,1
+S269,Sucursal Max 269,Zona 15 Chiquimula,8,1,4
+S270,Sucursal Norte 270,Zona 16 Guatemala,5,5,1
+S271,Sucursal Sur 271,Zona 18 Mixco,5,1,3
+S272,Sucursal Este 272,Zona 1 Villa Nueva,7,1,3
+S273,Sucursal Oeste 273,Zona 2 San Juan Sacatepequez,4,3,1
+S274,Sucursal Central 274,Zona 3 Amatitlan,8,4,2
+S275,Sucursal Principal 275,Zona 4 Quetzaltenango,6,1,1
+S276,Sucursal Express 276,Zona 5 Coban,9,6,1
+S277,Sucursal Plus 277,Zona 6 Escuintla,6,4,3
+S278,Sucursal Max 278,Zona 7 Antigua Guatemala,2,4,2
+S279,Sucursal Norte 279,Zona 8 Chiquimula,5,2,3
+S280,Sucursal Sur 280,Zona 10 Guatemala,8,2,4
+S281,Sucursal Este 281,Zona 11 Mixco,3,4,3
+S282,Sucursal Oeste 282,Zona 12 Villa Nueva,2,1,2
+S283,Sucursal Central 283,Zona 13 San Juan Sacatepequez,6,1,4
+S284,Sucursal Principal 284,Zona 14 Amatitlan,7,2,3
+S285,Sucursal Express 285,Zona 15 Quetzaltenango,7,2,4
+S286,Sucursal Plus 286,Zona 16 Coban,6,3,2
+S287,Sucursal Max 287,Zona 18 Escuintla,5,3,4
+S288,Sucursal Norte 288,Zona 1 Antigua Guatemala,8,5,3
+S289,Sucursal Sur 289,Zona 2 Chiquimula,3,4,4
+S290,Sucursal Este 290,Zona 3 Guatemala,7,1,3
+S291,Sucursal Oeste 291,Zona 4 Mixco,7,2,1
+S292,Sucursal Central 292,Zona 5 Villa Nueva,7,1,2
+S293,Sucursal Principal 293,Zona 6 San Juan Sacatepequez,7,3,4
+S294,Sucursal Express 294,Zona 7 Amatitlan,3,3,2
+S295,Sucursal Plus 295,Zona 8 Quetzaltenango,3,2,1
+S296,Sucursal Max 296,Zona 10 Coban,7,2,2
+S297,Sucursal Norte 297,Zona 11 Escuintla,3,4,1
+S298,Sucursal Sur 298,Zona 12 Antigua Guatemala,8,4,4
+S299,Sucursal Este 299,Zona 13 Chiquimula,9,6,1
+S300,Sucursal Oeste 300,Zona 14 Guatemala,2,4,4
+S301,Sucursal Central 301,Zona 15 Mixco,7,2,3
+S302,Sucursal Principal 302,Zona 16 Villa Nueva,2,3,4
+S303,Sucursal Express 303,Zona 18 San Juan Sacatepequez,5,5,4
+S304,Sucursal Plus 304,Zona 1 Amatitlan,8,2,1
+S305,Sucursal Max 305,Zona 2 Quetzaltenango,3,5,2
+S306,Sucursal Norte 306,Zona 3 Coban,7,3,2
+S307,Sucursal Sur 307,Zona 4 Escuintla,8,1,4
+S308,Sucursal Este 308,Zona 5 Antigua Guatemala,7,3,1
+S309,Sucursal Oeste 309,Zona 6 Chiquimula,9,4,4
+S310,Sucursal Central 310,Zona 7 Guatemala,2,5,4
+S311,Sucursal Principal 311,Zona 8 Mixco,2,5,4
+S312,Sucursal Express 312,Zona 10 Villa Nueva,8,6,1
+S313,Sucursal Plus 313,Zona 11 San Juan Sacatepequez,2,1,4
+S314,Sucursal Max 314,Zona 12 Amatitlan,3,1,2
+S315,Sucursal Norte 315,Zona 13 Quetzaltenango,2,1,2
+S316,Sucursal Sur 316,Zona 14 Coban,4,5,1
+S317,Sucursal Este 317,Zona 15 Escuintla,9,4,3
+S318,Sucursal Oeste 318,Zona 16 Antigua Guatemala,2,5,1
+S319,Sucursal Central 319,Zona 18 Chiquimula,5,5,3
+S320,Sucursal Principal 320,Zona 1 Guatemala,4,4,2
+S321,Sucursal Express 321,Zona 2 Mixco,6,6,2
+S322,Sucursal Plus 322,Zona 3 Villa Nueva,6,6,4
+S323,Sucursal Max 323,Zona 4 San Juan Sacatepequez,2,3,3
+S324,Sucursal Norte 324,Zona 5 Amatitlan,8,6,2
+S325,Sucursal Sur 325,Zona 6 Quetzaltenango,8,4,3
+S326,Sucursal Este 326,Zona 7 Coban,4,4,1
+S327,Sucursal Oeste 327,Zona 8 Escuintla,2,5,4
+S328,Sucursal Central 328,Zona 10 Antigua Guatemala,6,1,2
+S329,Sucursal Principal 329,Zona 11 Chiquimula,3,2,1
+S330,Sucursal Express 330,Zona 12 Guatemala,6,2,2
+S331,Sucursal Plus 331,Zona 13 Mixco,4,3,4
+S332,Sucursal Max 332,Zona 14 Villa Nueva,7,5,3
+S333,Sucursal Norte 333,Zona 15 San Juan Sacatepequez,4,2,4
+S334,Sucursal Sur 334,Zona 16 Amatitlan,5,6,3
+S335,Sucursal Este 335,Zona 18 Quetzaltenango,9,2,4
+S336,Sucursal Oeste 336,Zona 1 Coban,5,1,4
+S337,Sucursal Central 337,Zona 2 Escuintla,9,3,2
+S338,Sucursal Principal 338,Zona 3 Antigua Guatemala,3,2,4
+S339,Sucursal Express 339,Zona 4 Chiquimula,8,4,2
+S340,Sucursal Plus 340,Zona 5 Guatemala,9,4,3
+S341,Sucursal Max 341,Zona 6 Mixco,9,4,2
+S342,Sucursal Norte 342,Zona 7 Villa Nueva,8,3,3
+S343,Sucursal Sur 343,Zona 8 San Juan Sacatepequez,9,6,1
+S344,Sucursal Este 344,Zona 10 Amatitlan,2,2,1
+S345,Sucursal Oeste 345,Zona 11 Quetzaltenango,3,5,4
+S346,Sucursal Central 346,Zona 12 Coban,8,6,1
+S347,Sucursal Principal 347,Zona 13 Escuintla,7,4,2
+S348,Sucursal Express 348,Zona 14 Antigua Guatemala,6,3,3
+S349,Sucursal Plus 349,Zona 15 Chiquimula,8,1,4
+S350,Sucursal Max 350,Zona 16 Guatemala,6,3,3
+S351,Sucursal Norte 351,Zona 18 Mixco,2,5,2
+S352,Sucursal Sur 352,Zona 1 Villa Nueva,5,6,3
+S353,Sucursal Este 353,Zona 2 San Juan Sacatepequez,4,4,2
+S354,Sucursal Oeste 354,Zona 3 Amatitlan,7,2,2
+S355,Sucursal Central 355,Zona 4 Quetzaltenango,4,4,1
+S356,Sucursal Principal 356,Zona 5 Coban,2,4,1
+S357,Sucursal Express 357,Zona 6 Escuintla,2,5,2
+S358,Sucursal Plus 358,Zona 7 Antigua Guatemala,6,6,2
+S359,Sucursal Max 359,Zona 8 Chiquimula,5,6,1
+S360,Sucursal Norte 360,Zona 10 Guatemala,9,4,1
+S361,Sucursal Sur 361,Zona 11 Mixco,4,6,1
+S362,Sucursal Este 362,Zona 12 Villa Nueva,2,4,4
+S363,Sucursal Oeste 363,Zona 13 San Juan Sacatepequez,6,6,4
+S364,Sucursal Central 364,Zona 14 Amatitlan,4,6,4
+S365,Sucursal Principal 365,Zona 15 Quetzaltenango,3,6,1
+S366,Sucursal Express 366,Zona 16 Coban,6,4,2
+S367,Sucursal Plus 367,Zona 18 Escuintla,6,4,3
+S368,Sucursal Max 368,Zona 1 Antigua Guatemala,9,6,1
+S369,Sucursal Norte 369,Zona 2 Chiquimula,2,6,2
+S370,Sucursal Sur 370,Zona 3 Guatemala,8,2,3
+S371,Sucursal Este 371,Zona 4 Mixco,2,5,4
+S372,Sucursal Oeste 372,Zona 5 Villa Nueva,6,3,1
+S373,Sucursal Central 373,Zona 6 San Juan Sacatepequez,3,4,3
+S374,Sucursal Principal 374,Zona 7 Amatitlan,8,1,2
+S375,Sucursal Express 375,Zona 8 Quetzaltenango,8,6,2
+S376,Sucursal Plus 376,Zona 10 Coban,6,3,4
+S377,Sucursal Max 377,Zona 11 Escuintla,7,6,1
+S378,Sucursal Norte 378,Zona 12 Antigua Guatemala,7,3,4
+S379,Sucursal Sur 379,Zona 13 Chiquimula,8,5,4
+S380,Sucursal Este 380,Zona 14 Guatemala,7,1,3
+S381,Sucursal Oeste 381,Zona 15 Mixco,5,5,1
+S382,Sucursal Central 382,Zona 16 Villa Nueva,3,5,4
+S383,Sucursal Principal 383,Zona 18 San Juan Sacatepequez,6,4,2
+S384,Sucursal Express 384,Zona 1 Amatitlan,7,3,1
+S385,Sucursal Plus 385,Zona 2 Quetzaltenango,7,4,1
+S386,Sucursal Max 386,Zona 3 Coban,9,3,2
+S387,Sucursal Norte 387,Zona 4 Escuintla,6,3,3
+S388,Sucursal Sur 388,Zona 5 Antigua Guatemala,3,5,3
+S389,Sucursal Este 389,Zona 6 Chiquimula,7,5,1
+S390,Sucursal Oeste 390,Zona 7 Guatemala,6,3,4
+S391,Sucursal Central 391,Zona 8 Mixco,3,1,3
+S392,Sucursal Principal 392,Zona 10 Villa Nueva,8,3,2
+S393,Sucursal Express 393,Zona 11 San Juan Sacatepequez,6,6,3
+S394,Sucursal Plus 394,Zona 12 Amatitlan,6,6,3
+S395,Sucursal Max 395,Zona 13 Quetzaltenango,7,4,3
+S396,Sucursal Norte 396,Zona 14 Coban,6,6,1
+S397,Sucursal Sur 397,Zona 15 Escuintla,4,5,4
+S398,Sucursal Este 398,Zona 16 Antigua Guatemala,6,4,1
+S399,Sucursal Oeste 399,Zona 18 Chiquimula,2,1,4
+S400,Sucursal Central 400,Zona 1 Guatemala,2,3,4
+S401,SucursalInvalida401
+S402,SucursalInvalida402
+S403,SucursalInvalida403
+S404,SucursalInvalida404
+S405,SucursalInvalida405
+S406,SucursalInvalida406
+S407,SucursalInvalida407
+S408,SucursalInvalida408
+S409,SucursalInvalida409
+S410,SucursalInvalida410
+S411,SucursalInvalida411
+S412,SucursalInvalida412
+S413,SucursalInvalida413
+S414,SucursalInvalida414
+S415,SucursalInvalida415
+S416,SucursalInvalida416
+S417,SucursalInvalida417
+S418,SucursalInvalida418
+S419,SucursalInvalida419
+S420,SucursalInvalida420
+S421,SucursalInvalida421
+S422,SucursalInvalida422
+S423,SucursalInvalida423
+S424,SucursalInvalida424
+S425,SucursalInvalida425
+S426,SucursalInvalida426
+S427,SucursalInvalida427
+S428,SucursalInvalida428
+S429,SucursalInvalida429
+S430,SucursalInvalida430
+S431,SucursalInvalida431
+S432,SucursalInvalida432
+S433,SucursalInvalida433
+S434,SucursalInvalida434
+S435,SucursalInvalida435
+S436,SucursalInvalida436
+S437,SucursalInvalida437
+S438,SucursalInvalida438
+S439,SucursalInvalida439
+S440,SucursalInvalida440
+S441,SucursalInvalida441
+S442,SucursalInvalida442
+S443,SucursalInvalida443
+S444,SucursalInvalida444
+S445,SucursalInvalida445
+S446,SucursalInvalida446
+S447,SucursalInvalida447
+S448,SucursalInvalida448
+S449,SucursalInvalida449
+S450,SucursalInvalida450
+S001,Duplicada 1,Zona 1 Guatemala,5,3,2
+S002,Duplicada 2,Zona 1 Guatemala,5,3,2
+S003,Duplicada 3,Zona 1 Guatemala,5,3,2
+S004,Duplicada 4,Zona 1 Guatemala,5,3,2
+S005,Duplicada 5,Zona 1 Guatemala,5,3,2
+S006,Duplicada 6,Zona 1 Guatemala,5,3,2
+S007,Duplicada 7,Zona 1 Guatemala,5,3,2
+S008,Duplicada 8,Zona 1 Guatemala,5,3,2
+S009,Duplicada 9,Zona 1 Guatemala,5,3,2
+S010,Duplicada 10,Zona 1 Guatemala,5,3,2
+S011,Duplicada 11,Zona 1 Guatemala,5,3,2
+S012,Duplicada 12,Zona 1 Guatemala,5,3,2
+S013,Duplicada 13,Zona 1 Guatemala,5,3,2
+S014,Duplicada 14,Zona 1 Guatemala,5,3,2
+S015,Duplicada 15,Zona 1 Guatemala,5,3,2
+S016,Duplicada 16,Zona 1 Guatemala,5,3,2
+S017,Duplicada 17,Zona 1 Guatemala,5,3,2
+S018,Duplicada 18,Zona 1 Guatemala,5,3,2
+S019,Duplicada 19,Zona 1 Guatemala,5,3,2
+S020,Duplicada 20,Zona 1 Guatemala,5,3,2
+S021,Duplicada 21,Zona 1 Guatemala,5,3,2
+S022,Duplicada 22,Zona 1 Guatemala,5,3,2
+S023,Duplicada 23,Zona 1 Guatemala,5,3,2
+S024,Duplicada 24,Zona 1 Guatemala,5,3,2
+S025,Duplicada 25,Zona 1 Guatemala,5,3,2
+S026,Duplicada 26,Zona 1 Guatemala,5,3,2
+S027,Duplicada 27,Zona 1 Guatemala,5,3,2
+S028,Duplicada 28,Zona 1 Guatemala,5,3,2
+S029,Duplicada 29,Zona 1 Guatemala,5,3,2
+S030,Duplicada 30,Zona 1 Guatemala,5,3,2
+S031,Duplicada 31,Zona 1 Guatemala,5,3,2
+S032,Duplicada 32,Zona 1 Guatemala,5,3,2
+S033,Duplicada 33,Zona 1 Guatemala,5,3,2
+S034,Duplicada 34,Zona 1 Guatemala,5,3,2
+S035,Duplicada 35,Zona 1 Guatemala,5,3,2
+S036,Duplicada 36,Zona 1 Guatemala,5,3,2
+S037,Duplicada 37,Zona 1 Guatemala,5,3,2
+S038,Duplicada 38,Zona 1 Guatemala,5,3,2
+S039,Duplicada 39,Zona 1 Guatemala,5,3,2
+S040,Duplicada 40,Zona 1 Guatemala,5,3,2
+S041,Duplicada 41,Zona 1 Guatemala,5,3,2
+S042,Duplicada 42,Zona 1 Guatemala,5,3,2
+S043,Duplicada 43,Zona 1 Guatemala,5,3,2
+S044,Duplicada 44,Zona 1 Guatemala,5,3,2
+S045,Duplicada 45,Zona 1 Guatemala,5,3,2
+S046,Duplicada 46,Zona 1 Guatemala,5,3,2
+S047,Duplicada 47,Zona 1 Guatemala,5,3,2
+S048,Duplicada 48,Zona 1 Guatemala,5,3,2
+S049,Duplicada 49,Zona 1 Guatemala,5,3,2
+S050,Duplicada 50,Zona 1 Guatemala,5,3,2

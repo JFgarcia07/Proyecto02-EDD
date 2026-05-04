@@ -418,3 +418,9 @@ body {
     font-size: 13px;
     text-align: right;
 }
+
+.sim-activo {
+    border: 2px solid #e94560 !important;
+    transform: scale(1.02);
+    transition: all 0.3s;
+}

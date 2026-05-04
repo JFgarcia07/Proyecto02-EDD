@@ -194,6 +194,11 @@ function cargarCSVProductos(input) {
                 continue;
             }
 
+            if (codigoBarra.length !== 10) {
+                errores.push(`Línea ${i + 1}: código de barras '${codigoBarra}' inválido (debe tener 10 caracteres)`);
+                continue;
+            }
+
             let sucursalExiste = false;
             for (let k = 0; k < sucursales.length; k++) {
                 if (sucursales[k].id === sucursalId) { sucursalExiste = true; break; }

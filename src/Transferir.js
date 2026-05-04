@@ -362,6 +362,7 @@ function transfer() {
         &nbsp;|&nbsp; <strong>Paradas:</strong> ${resultado.ruta.length}`;
 
     renderSimulacion(pasos, etaAcc, criterio);
+    animarPasos(pasos, criterio);
 
     // Actualizar estado del producto
     producto.estado          = 'En tránsito';
@@ -447,6 +448,51 @@ function inicializarSelectsTransferencia() {
             }
             selProd.appendChild(new Option(`${p.nombre} — ${nomSuc}`, i));
         }
+    }
+}
+
+const ESCALA = 0.1;
+function animarPasos(pasos, criterio){
+    let tiempoAcumulado = 0;
+
+    for(let i = 0; i < pasos.length; i++){
+        const paso = pasos[i];
+
+        if(paso.tipo === 'transito'){
+            tiempoAcumulado += paso.valor;
+        } else if (paso.tipo === 'ingreso') {
+            tiempoAcumulado += paso.tiempo;
+        } else if (paso.tipo === 'traspaso') {
+            tiempoAcumulado += paso.tiempo;
+        } else if (paso.tipo === 'salida') {
+            tiempoAcumulado += paso.espera;
+        }
+
+        (function(t, p) {
+            setTimeout(function() {
+                resaltarPasoEnUI(p);
+                renderQueuesVis();
+            }, t * 1000 * ESCALA);
+        })(tiempoAcumulado, paso);
+    }
+}
+
+function resaltarPasoEnUI(paso) {
+    const pasosDivs = document.querySelectorAll('.sim-paso');
+    pasosDivs.forEach(d => d.classList.remove('sim-activo'));
+
+    const tipos = {
+        'transito': 'sim-transito',
+        'ingreso':  'sim-ingreso',
+        'traspaso': 'sim-traspaso',
+        'salida':   'sim-salida',
+        'destino':  'sim-destino'
+    };
+
+    const divs = document.querySelectorAll('.' + tipos[paso.tipo]);
+    if (divs.length > 0) {
+        divs[divs.length - 1].classList.add('sim-activo');
+        divs[divs.length - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 

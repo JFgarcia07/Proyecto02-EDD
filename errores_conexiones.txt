@@ -1,0 +1,22 @@
+Log de errores — 3/5/2026, 5:13:45 p. m.
+==================================================
+Línea 82: sucursal origen 'XINVALID1' no existe
+Línea 83: sucursal origen 'XINVALID2' no existe
+Línea 84: sucursal origen 'XINVALID3' no existe
+Línea 85: sucursal origen 'XINVALID4' no existe
+Línea 86: sucursal origen 'XINVALID5' no existe
+Línea 87: sucursal origen 'XINVALID6' no existe
+Línea 88: sucursal origen 'XINVALID7' no existe
+Línea 89: sucursal origen 'XINVALID8' no existe
+Línea 90: sucursal origen 'XINVALID9' no existe
+Línea 91: sucursal origen 'XINVALID10' no existe
+Línea 92: formato incorrecto
+Línea 93: formato incorrecto
+Línea 94: formato incorrecto
+Línea 95: formato incorrecto
+Línea 96: formato incorrecto
+Línea 97: formato incorrecto
+Línea 98: formato incorrecto
+Línea 99: formato incorrecto
+Línea 100: formato incorrecto
+Línea 101: formato incorrecto

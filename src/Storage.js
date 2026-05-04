@@ -51,3 +51,12 @@ function getColasGuardadas() {
 function guardarColas(data) {
     sessionStorage.setItem('colas', JSON.stringify(data));
 }
+
+function getColasGuardadas() {
+    try { return JSON.parse(sessionStorage.getItem('colas') || '{}'); }
+    catch { return {}; }
+}
+
+function guardarColas(colas) {
+    sessionStorage.setItem('colas', JSON.stringify(colas));
+}

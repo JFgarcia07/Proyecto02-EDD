@@ -70,12 +70,21 @@ function generarDotGrafo() {
     const sucursales = getSucursalesGuardadas();
     const conexiones = getConexionesGuardadas();
 
+    // Solo incluir sucursales que participan en al menos una conexión
+    const conConexion = {};
+    for (let k = 0; k < conexiones.length; k++) {
+        conConexion[conexiones[k].origen]  = true;
+        conConexion[conexiones[k].destino] = true;
+    }
+
     let dot = 'digraph Red {\n';
     dot    += '    node [shape=ellipse, style=filled, fillcolor="#DBEAFE"];\n';
     dot    += '    rankdir=LR;\n\n';
 
     for (let i = 0; i < sucursales.length; i++) {
-        dot += '    "' + sucursales[i].id + '" [label="' + sucursales[i].nombre + '"];\n';
+        if (conConexion[sucursales[i].id]) {
+            dot += '    "' + sucursales[i].id + '" [label="' + sucursales[i].nombre + '"];\n';
+        }
     }
 
     for (let k = 0; k < conexiones.length; k++) {
@@ -245,7 +254,9 @@ function descargarDot(tipo) {
     const enlace = document.createElement('a');
     enlace.href     = url;
     enlace.download = nombre;
+    document.body.appendChild(enlace);
     enlace.click();
+    document.body.removeChild(enlace);
     URL.revokeObjectURL(url);
 }
 
@@ -256,29 +267,40 @@ function descargarPng(tipo) {
     if (!dotString) { alert('Sin datos para generar la imagen.'); return; }
 
     const nombre = tipo + '_' + sucursalActual.id + '.png';
-    const svgStr = Viz(dotString);
-    const img    = new Image();
-    const blob   = new Blob([svgStr], { type: 'image/svg+xml' });
-    const url    = URL.createObjectURL(blob);
 
-    img.onload = function() {
-        const canvas  = document.createElement('canvas');
-        canvas.width  = img.width  || 800;
-        canvas.height = img.height || 600;
-        const ctx     = canvas.getContext('2d');
+    // Forzar dimensiones en px al SVG para que el canvas no quede en 0×0
+    // (Viz.js emite dimensiones en puntos "pt" que los navegadores no siempre resuelven)
+    let svgStr = Viz(dotString);
+    svgStr = svgStr.replace(/^<svg /, '<svg width="1200" height="900" ');
+
+    const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const img  = new Image();
+
+    img.onload = function () {
+        const W = 1200;
+        const H = 900;
+        const canvas = document.createElement('canvas');
+        canvas.width  = W;
+        canvas.height = H;
+        const ctx = canvas.getContext('2d');
         ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0);
+        ctx.fillRect(0, 0, W, H);
+        ctx.drawImage(img, 0, 0, W, H);
+        URL.revokeObjectURL(url);
 
-        canvas.toBlob(function(pngBlob) {
-            const pngUrl = URL.createObjectURL(pngBlob);
-            const enlace = document.createElement('a');
-            enlace.href     = pngUrl;
-            enlace.download = nombre;
-            enlace.click();
-            URL.revokeObjectURL(pngUrl);
-            URL.revokeObjectURL(url);
-        }, 'image/png');
+        const dataURL = canvas.toDataURL('image/png');
+        const enlace  = document.createElement('a');
+        enlace.href     = dataURL;
+        enlace.download = nombre;
+        document.body.appendChild(enlace);
+        enlace.click();
+        document.body.removeChild(enlace);
+    };
+
+    img.onerror = function () {
+        URL.revokeObjectURL(url);
+        alert('No se pudo generar la imagen PNG.');
     };
 
     img.src = url;
@@ -286,14 +308,15 @@ function descargarPng(tipo) {
 
 function descargarTodo() {
     if (!sucursalActual) { alert('Selecciona una sucursal primero.'); return; }
-    descargarDot('avl');
-    descargarDot('b');
-    descargarDot('bmas');
-    descargarDot('grafo');
-    setTimeout(function() { descargarPng('avl');  }, 500);
-    setTimeout(function() { descargarPng('b');    }, 1000);
-    setTimeout(function() { descargarPng('bmas'); }, 1500);
-    setTimeout(function() { descargarPng('grafo');}, 2000);
+
+    // Separar cada descarga para que el navegador no las bloquee como popups
+    const tipos = ['avl', 'b', 'bmas', 'grafo'];
+    tipos.forEach(function(t, i) {
+        setTimeout(function() { descargarDot(t); }, i * 300);
+    });
+    tipos.forEach(function(t, i) {
+        setTimeout(function() { descargarPng(t); }, 1500 + i * 800);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,102 @@
+Log de errores — 3/5/2026, 5:14:14 p. m.
+==================================================
+Línea 2902: código duplicado '7612818734'
+Línea 2903: código duplicado '9949903552'
+Línea 2904: código duplicado '2163511326'
+Línea 2905: código duplicado '3792023241'
+Línea 2906: código duplicado '9335775497'
+Línea 2907: código duplicado '4806902320'
+Línea 2908: código duplicado '7697172872'
+Línea 2909: código duplicado '1124350424'
+Línea 2910: código duplicado '8129012856'
+Línea 2911: código duplicado '7305593794'
+Línea 2912: código duplicado '4719662275'
+Línea 2913: código duplicado '2458776997'
+Línea 2914: código duplicado '4317619408'
+Línea 2915: código duplicado '3582531930'
+Línea 2916: código duplicado '3252270277'
+Línea 2917: código duplicado '5747415530'
+Línea 2918: código duplicado '1777727619'
+Línea 2919: código duplicado '7436460775'
+Línea 2920: código duplicado '2806388357'
+Línea 2921: código duplicado '4663145908'
+Línea 2922: código duplicado '1040994746'
+Línea 2923: código duplicado '8641634130'
+Línea 2924: código duplicado '2445428504'
+Línea 2925: código duplicado '6386051527'
+Línea 2926: código duplicado '5313178238'
+Línea 2927: código duplicado '9203031447'
+Línea 2928: código duplicado '0881586241'
+Línea 2929: código duplicado '1515851076'
+Línea 2930: código duplicado '5407101301'
+Línea 2931: código duplicado '1079027193'
+Línea 2932: código duplicado '2262731615'
+Línea 2933: código duplicado '2397728660'
+Línea 2934: código duplicado '4366515431'
+Línea 2935: código duplicado '7561381367'
+Línea 2936: código duplicado '5948182069'
+Línea 2937: código duplicado '2568448602'
+Línea 2938: código duplicado '7002450762'
+Línea 2939: código duplicado '6184948113'
+Línea 2940: código duplicado '1446546795'
+Línea 2941: código duplicado '6459245173'
+Línea 2942: código duplicado '4513283043'
+Línea 2943: código duplicado '0421680406'
+Línea 2944: código duplicado '0315682624'
+Línea 2945: código duplicado '7847931946'
+Línea 2946: código duplicado '0895142890'
+Línea 2947: código duplicado '4694511446'
+Línea 2948: código duplicado '9647611811'
+Línea 2949: código duplicado '1177391867'
+Línea 2950: código duplicado '0077327475'
+Línea 2951: código duplicado '6210728538'
+Línea 2952: precio o stock inválido
+Línea 2953: precio o stock inválido
+Línea 2954: precio o stock inválido
+Línea 2955: precio o stock inválido
+Línea 2956: precio o stock inválido
+Línea 2957: precio o stock inválido
+Línea 2958: precio o stock inválido
+Línea 2959: precio o stock inválido
+Línea 2960: precio o stock inválido
+Línea 2961: precio o stock inválido
+Línea 2962: precio o stock inválido
+Línea 2963: precio o stock inválido
+Línea 2964: precio o stock inválido
+Línea 2965: precio o stock inválido
+Línea 2966: precio o stock inválido
+Línea 2967: precio o stock inválido
+Línea 2968: precio o stock inválido
+Línea 2969: precio o stock inválido
+Línea 2970: precio o stock inválido
+Línea 2971: precio o stock inválido
+Línea 2972: precio o stock inválido
+Línea 2973: precio o stock inválido
+Línea 2974: precio o stock inválido
+Línea 2975: precio o stock inválido
+Línea 2976: precio o stock inválido
+Línea 2977: formato incorrecto
+Línea 2978: formato incorrecto
+Línea 2979: formato incorrecto
+Línea 2980: formato incorrecto
+Línea 2981: formato incorrecto
+Línea 2982: formato incorrecto
+Línea 2983: formato incorrecto
+Línea 2984: formato incorrecto
+Línea 2985: formato incorrecto
+Línea 2986: formato incorrecto
+Línea 2987: formato incorrecto
+Línea 2988: formato incorrecto
+Línea 2989: formato incorrecto
+Línea 2990: formato incorrecto
+Línea 2991: formato incorrecto
+Línea 2992: formato incorrecto
+Línea 2993: formato incorrecto
+Línea 2994: formato incorrecto
+Línea 2995: formato incorrecto
+Línea 2996: formato incorrecto
+Línea 2997: formato incorrecto
+Línea 2998: formato incorrecto
+Línea 2999: formato incorrecto
+Línea 3000: formato incorrecto
+Línea 3001: formato incorrecto
