@@ -1,6 +1,6 @@
 let catalogoViz    = null;
 let sucursalActual = null;
-let dotStrings     = { avl: '', b: '', bmas: '', grafo: '' };
+let dotStrings     = { avl: '', b: '', bmas: '', grafo: '', hash: '' };
 let vizInstance    = null;
 
 function inicializar() {
@@ -60,10 +60,11 @@ function cargarSucursal() {
 }
 
 function generarDots() {
-    dotStrings.avl  = catalogoViz.arbolAVL.generarDot();
-    dotStrings.b    = catalogoViz.arbolB.generarDot();
-    dotStrings.bmas = catalogoViz.arbolBMas.generarDot();
+    dotStrings.avl   = catalogoViz.arbolAVL.generarDot();
+    dotStrings.b     = catalogoViz.arbolB.generarDot();
+    dotStrings.bmas  = catalogoViz.arbolBMas.generarDot();
     dotStrings.grafo = generarDotGrafo();
+    dotStrings.hash  = catalogoViz.tablaHash.generarDot();
 }
 
 function generarDotGrafo() {
@@ -310,7 +311,7 @@ function descargarTodo() {
     if (!sucursalActual) { alert('Selecciona una sucursal primero.'); return; }
 
     // Separar cada descarga para que el navegador no las bloquee como popups
-    const tipos = ['avl', 'b', 'bmas', 'grafo'];
+    const tipos = ['avl', 'b', 'bmas', 'grafo', 'hash'];
     tipos.forEach(function(t, i) {
         setTimeout(function() { descargarDot(t); }, i * 300);
     });

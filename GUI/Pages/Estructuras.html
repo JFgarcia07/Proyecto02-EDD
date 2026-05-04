@@ -82,7 +82,15 @@
             </div>
             <div class="col-md-6">
                 <div class="content-card">
-                    <div class="card-header-title">Tabla Hash — distribución</div>
+                    <div class="card-header-title">
+                        Tabla Hash — distribución
+                        <div class="float-end">
+                            <button class="btn btn-sm btn-outline-secondary me-1"
+                                    onclick="descargarDot('hash')">⬇ .dot</button>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    onclick="descargarPng('hash')">⬇ .png</button>
+                        </div>
+                    </div>
                     <canvas id="canvas-hash" class="viz-canvas"></canvas>
                     <div id="hash-stats" class="mt-2" style="font-size:12px; color:#6b7280"></div>
                 </div>

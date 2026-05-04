@@ -115,6 +115,49 @@ class TablaHash {
         return resultado;
     }
 
+    generarDot() {
+        const lines = [];
+        lines.push('digraph TablaHash {');
+        lines.push('    rankdir=LR;');
+        lines.push('    node [fontsize=10, fontname="Arial", style=filled];');
+        lines.push('    edge [arrowsize=0.7];');
+        lines.push('');
+
+        const ocupados = [];
+        for (let i = 0; i < this.capacidad; i++) {
+            if (this.tabla[i] !== null) ocupados.push(i);
+        }
+
+        if (ocupados.length === 0) {
+            lines.push('    vacio [label="Tabla Hash vacía", shape=plaintext];');
+            lines.push('}');
+            return lines.join('\n');
+        }
+
+        for (let k = 0; k < ocupados.length; k++) {
+            const idx = ocupados[k];
+            lines.push('    bucket_' + idx + ' [label="[' + idx + ']", shape=box, fillcolor="#BFDBFE"];');
+
+            let nodo   = this.tabla[idx];
+            let j      = 0;
+            let prevId = 'bucket_' + idx;
+
+            while (nodo !== null) {
+                const nodeId = 'n_' + idx + '_' + j;
+                const cod    = nodo.producto.codigoBarras.replace(/"/g, "'");
+                const nombre = nodo.producto.nombre.replace(/"/g, "'");
+                lines.push('    ' + nodeId + ' [label="' + cod + '\\n' + nombre + '", shape=box, fillcolor="#A7F3D0"];');
+                lines.push('    ' + prevId + ' -> ' + nodeId + ';');
+                prevId = nodeId;
+                nodo   = nodo.siguiente;
+                j++;
+            }
+        }
+
+        lines.push('}');
+        return lines.join('\n');
+    }
+
     getSize()       { return this.size; }
     getCapacidad()  { return this.capacidad; }
     getLoadFactor() { return this.size / this.capacidad; }
